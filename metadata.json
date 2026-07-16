@@ -1,0 +1,6 @@
+{
+  "name": "Career Wings",
+  "description": "An interactive study abroad consultation platform with course search, student-eligibility checkers, expense estimators, and parent portals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
