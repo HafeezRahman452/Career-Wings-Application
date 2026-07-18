@@ -25,7 +25,11 @@ import {
   Home,
   MessageCircle,
   BookOpen,
-  X
+  X,
+  Download,
+  FolderArchive,
+  FileCode,
+  Calendar
 } from "lucide-react";
 
 import { DESTINATIONS, COURSES } from "./data/mockData";
@@ -85,6 +89,7 @@ export default function App() {
   const [isCounsellingModalOpen, setIsCounsellingModalOpen] = useState<boolean>(false);
   const [isTourOpen, setIsTourOpen] = useState<boolean>(false);
   const [prefilledDetails, setPrefilledDetails] = useState<string>("");
+  const [showDownloadPanel, setShowDownloadPanel] = useState<boolean>(true);
   const [isSavedModalOpen, setIsSavedModalOpen] = useState<boolean>(false);
   const [activeTestPrepTab, setActiveTestPrepTab] = useState<string>("ielts");
   const [finderCountryFilter, setFinderCountryFilter] = useState<string>("all");
@@ -1215,6 +1220,104 @@ export default function App() {
         </div>
 
       </footer>
+
+      {/* Floating HTML Download Hub (Roman English) */}
+      <AnimatePresence>
+        {showDownloadPanel ? (
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 50 }}
+            className="fixed bottom-6 right-6 z-50 max-w-[360px] bg-white dark:bg-slate-950 rounded-3xl shadow-2xl border-2 border-emerald-500 dark:border-emerald-400 overflow-hidden flex flex-col text-slate-800 dark:text-slate-100"
+          >
+            {/* Header */}
+            <div className="bg-emerald-600 dark:bg-emerald-700 text-white p-4 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <FolderArchive className="h-5 w-5 animate-bounce" />
+                <div>
+                  <h4 className="font-black text-xs uppercase tracking-wider">HTML ZIP Download Hub</h4>
+                  <p className="text-[10px] text-emerald-100 font-bold">100% Static Single Code Package</p>
+                </div>
+              </div>
+              <button 
+                onClick={() => setShowDownloadPanel(false)}
+                className="p-1 hover:bg-white/10 rounded-full transition-colors"
+                title="Minimise"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+
+            {/* Body */}
+            <div className="p-5 space-y-4 text-xs font-semibold leading-relaxed">
+              <p className="text-gray-600 dark:text-slate-300">
+                Aapka custom-made pure <strong>HTML &amp; CSS code</strong> package local system ke liye ready ho chuka hai! 
+              </p>
+              <div className="p-3 bg-amber-50 dark:bg-slate-900 border border-amber-200 dark:border-slate-800 rounded-2xl text-[11px] text-amber-800 dark:text-amber-300 space-y-1.5">
+                <p>💡 <strong>Note:</strong> Yeh code container ke andar virtual Desktop par saved hai, isliye aapko AI Studio ke 'Settings' menu me direct ZIP export nahi mil raha tha.</p>
+                <p>Niche diye gaye buttons se aap ise directly apne computer/mobile par download kar sakte hain!</p>
+              </div>
+
+              <div className="space-y-2 pt-1">
+                {/* Option 1: ZIP File */}
+                <a 
+                  href="/api/download-html-zip"
+                  download
+                  className="w-full flex items-center justify-between gap-3 p-3 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs rounded-2xl shadow-sm transition-all text-center select-none"
+                >
+                  <span className="flex items-center gap-2">
+                    <FolderArchive className="h-4 w-4" />
+                    Download Full Folder (ZIP)
+                  </span>
+                  <Download className="h-4 w-4" />
+                </a>
+
+                {/* Option 2: Single HTML File */}
+                <a 
+                  href="/api/download-single-html"
+                  download
+                  className="w-full flex items-center justify-between gap-3 p-3 bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-100 font-extrabold text-xs rounded-2xl border border-slate-200 dark:border-slate-800 transition-all text-center select-none"
+                >
+                  <span className="flex items-center gap-2">
+                    <FileCode className="h-4 w-4 text-[#0047AB] dark:text-blue-400" />
+                    Download Main Page HTML
+                  </span>
+                  <Download className="h-4 w-4" />
+                </a>
+
+                {/* Option 3: Single Appointment HTML File */}
+                <a 
+                  href="/api/download-appointment-html"
+                  download
+                  className="w-full flex items-center justify-between gap-3 p-3 bg-amber-550 hover:bg-amber-600 bg-amber-500 text-white font-extrabold text-xs rounded-2xl transition-all text-center select-none shadow-sm"
+                >
+                  <span className="flex items-center gap-2">
+                    <Calendar className="h-4 w-4" />
+                    Download Appointment HTML
+                  </span>
+                  <Download className="h-4 w-4" />
+                </a>
+              </div>
+              
+              <div className="text-[10px] text-gray-400 dark:text-slate-500 text-center font-mono font-medium">
+                Folder Name: Career Wings Html 16-07-2026
+              </div>
+            </div>
+          </motion.div>
+        ) : (
+          /* Minimized Floating FAB */
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            onClick={() => setShowDownloadPanel(true)}
+            className="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white p-4 rounded-full shadow-2xl flex items-center gap-2 font-black text-xs transition-all border-2 border-white hover:scale-105 active:scale-95 animate-pulse"
+          >
+            <FolderArchive className="h-5 w-5" />
+            <span>Download HTML ZIP</span>
+          </motion.button>
+        )}
+      </AnimatePresence>
 
     </div>
   );

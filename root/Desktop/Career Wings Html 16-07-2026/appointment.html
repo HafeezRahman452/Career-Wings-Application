@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Free Appointment | Career Wings</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .font-mono-tech {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    /* Smooth custom transitions */
+    .transition-all-300 {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- TOP BAR GREETING -->
+  <div class="bg-[#0047AB] text-white text-[11px] sm:text-xs font-black py-2.5 px-4 text-center tracking-wider uppercase flex items-center justify-center gap-2">
+    <span class="bg-amber-400 text-slate-900 px-1.5 py-0.5 rounded text-[9px] font-mono-tech">FREE HUB</span>
+    Career Wings Interactive Appointment Booking Simulator • Local Storage Synced
+  </div>
+
+  <!-- MAIN HEADER / NAVBAR -->
+  <header class="bg-white border-b border-slate-100 shadow-xs sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2.5 cursor-pointer" onclick="window.location.href='index.html'">
+        <div class="w-9 h-9 bg-[#0047AB] rounded-xl flex items-center justify-center text-white shadow-md">
+          <i data-lucide="plane-takeoff" class="h-5 w-5"></i>
+        </div>
+        <div>
+          <div class="text-sm font-black text-slate-900 tracking-tight leading-none uppercase">Career Wings</div>
+          <div class="text-[9px] text-[#0047AB] font-bold uppercase tracking-widest mt-0.5">Appointment Portal</div>
+        </div>
+      </div>
+      <a href="index.html" class="text-xs font-bold text-gray-500 hover:text-[#0047AB] flex items-center gap-1.5 transition-colors">
+        <i data-lucide="arrow-left" class="h-4 w-4"></i> Back to Main Site
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- LEFT COLUMN: BOOKING FORM (7 Cols) -->
+      <section class="lg:col-span-7 bg-white rounded-3xl border border-gray-200/80 p-6 sm:p-8 shadow-sm space-y-6">
+        
+        <div class="space-y-2 border-b border-gray-100 pb-5">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-black bg-blue-50 text-[#0047AB] uppercase tracking-widest font-mono-tech">
+            📅 No Cost consultation
+          </span>
+          <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Book Your Free Appointment</h1>
+          <p class="text-xs sm:text-sm text-gray-500 font-semibold leading-relaxed">
+            Fill out the official counseling request below. Our senior admissions officer will arrange a personalized video call session to guide you on scholarships, fee waivers, and visa procedures.
+          </p>
+        </div>
+
+        <form id="appointmentForm" onsubmit="handleFormSubmit(event)" class="space-y-5">
+          
+          <!-- Full Name -->
+          <div class="space-y-1.5">
+            <label class="text-xs font-extrabold text-gray-600 uppercase tracking-wider flex items-center gap-1.5">
+              <i data-lucide="user" class="h-4 w-4 text-gray-400"></i> Full Name <span class="text-red-500">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="studentName" 
+              placeholder="e.g. Jane Doe" 
+              required 
+              class="w-full px-4 py-3 text-xs font-semibold bg-slate-50/50 border border-gray-250 rounded-xl focus:ring-2 focus:ring-[#0047AB]/20 focus:border-[#0047AB] focus:outline-none transition-all"
+            />
+          </div>
+
+          <!-- Email & Phone Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <div class="space-y-1.5">
+              <label class="text-xs font-extrabold text-gray-600 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="mail" class="h-4 w-4 text-gray-400"></i> Email Address <span class="text-red-500">*</span>
+              </label>
+              <input 
+                type="email" 
+                id="studentEmail" 
+                placeholder="e.g. name@domain.com" 
+                required 
+                class="w-full px-4 py-3 text-xs font-semibold bg-slate-50/50 border border-gray-250 rounded-xl focus:ring-2 focus:ring-[#0047AB]/20 focus:border-[#0047AB] focus:outline-none transition-all"
+              />
+            </div>
+
+            <div class="space-y-1.5">
+              <label class="text-xs font-extrabold text-gray-600 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="phone" class="h-4 w-4 text-gray-400"></i> WhatsApp / Mobile <span class="text-red-500">*</span>
+              </label>
+              <input 
+                type="tel" 
+                id="studentPhone" 
+                placeholder="e.g. +91 98765 43210" 
+                required 
+                class="w-full px-4 py-3 text-xs font-semibold bg-slate-50/50 border border-gray-250 rounded-xl focus:ring-2 focus:ring-[#0047AB]/20 focus:border-[#0047AB] focus:outline-none transition-all"
+              />
+            </div>
+
+          </div>
+
+          <!-- Country & Preferred Intake -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <div class="space-y-1.5">
+              <label class="text-xs font-extrabold text-gray-600 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="globe" class="h-4 w-4 text-gray-400"></i> Target Destination <span class="text-red-500">*</span>
+              </label>
+              <select id="targetCountry" required class="w-full px-4 py-3 text-xs font-bold bg-slate-50/50 border border-gray-250 rounded-xl focus:outline-none focus:border-[#0047AB]">
+                <option value="UK">United Kingdom (Russell Group)</option>
+                <option value="Canada">Canada (PGWP Enabled)</option>
+                <option value="Australia">Australia (PR Pathways)</option>
+                <option value="Germany">Germany (Tuition Free)</option>
+                <option value="USA">USA (STEM OPT Extension)</option>
+              </select>
+            </div>
+
+            <div class="space-y-1.5">
+              <label class="text-xs font-extrabold text-gray-600 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="calendar" class="h-4 w-4 text-gray-400"></i> Intended Intake <span class="text-red-500">*</span>
+              </label>
+              <select id="targetIntake" required class="w-full px-4 py-3 text-xs font-bold bg-slate-50/50 border border-gray-250 rounded-xl focus:outline-none focus:border-[#0047AB]">
+                <option value="Fall 2026">Fall 2026 Intake</option>
+                <option value="Spring 2027">Spring 2027 Intake</option>
+                <option value="Summer 2026">Summer 2026 intake</option>
+              </select>
+            </div>
+
+          </div>
+
+          <!-- Interactive Date & Time Slots Picker -->
+          <div class="space-y-3 p-4 bg-slate-50/50 rounded-2xl border border-gray-200">
+            <h3 class="text-xs font-black text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
+              <i data-lucide="clock" class="h-4 w-4 text-[#0047AB]"></i> Select Date &amp; Time Slot
+            </h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              
+              <div class="space-y-1">
+                <label class="text-[10px] font-extrabold text-gray-550">Appointment Date</label>
+                <input 
+                  type="date" 
+                  id="apptDate" 
+                  required 
+                  class="w-full px-3 py-2.5 text-xs font-semibold bg-white border border-gray-250 rounded-xl focus:outline-none"
+                />
+              </div>
+
+              <div class="space-y-1">
+                <label class="text-[10px] font-extrabold text-gray-550">Preferred Time Slot</label>
+                <select id="apptTime" required class="w-full px-3 py-2.5 text-xs font-bold bg-white border border-gray-250 rounded-xl focus:outline-none">
+                  <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM (Morning)</option>
+                  <option value="12:00 PM - 01:00 PM">12:00 PM - 01:00 PM (Noon)</option>
+                  <option value="03:00 PM - 04:00 PM">03:00 PM - 04:00 PM (Afternoon)</option>
+                  <option value="06:00 PM - 07:00 PM">06:00 PM - 07:00 PM (Evening)</option>
+                </select>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Consent Checkboxes -->
+          <div class="space-y-2.5">
+            <label class="flex items-start gap-2.5 cursor-pointer">
+              <input type="checkbox" id="agreeTnc" required class="mt-0.5 rounded border-gray-300 text-[#0047AB]" />
+              <span class="text-[11px] text-gray-500 font-semibold leading-tight">
+                I agree to the Career Wings document safety policies and authorize designated counselors to review my profile details.
+              </span>
+            </label>
+          </div>
+
+          <!-- Error Alert Banner -->
+          <div id="errorAlert" class="hidden bg-red-50 border border-red-200 text-red-700 p-3.5 rounded-xl text-xs font-extrabold"></div>
+
+          <!-- Success Dialog Box -->
+          <div id="successAlert" class="hidden bg-emerald-50 border border-emerald-200 text-emerald-800 p-4 rounded-2xl text-xs font-black space-y-1">
+            <div class="flex items-center gap-1.5 text-emerald-900">
+              <i data-lucide="check-circle" class="h-4.5 w-4.5 text-emerald-600"></i>
+              Appointment Confirmed!
+            </div>
+            <p class="font-semibold text-emerald-700/90 leading-normal pl-6">
+              Aapka meeting scheduled ho gaya hai. Dr. Elizabeth Moore ko assigned kiya gaya hai. Email aur SMS notification bejh diya gaya hai!
+            </p>
+          </div>
+
+          <!-- Submit Button -->
+          <button 
+            type="submit" 
+            id="submitBtn"
+            class="w-full py-4 bg-[#0047AB] hover:bg-blue-700 text-white font-black text-xs rounded-2xl shadow-md transition-all flex items-center justify-center gap-2 hover:scale-101"
+          >
+            <i data-lucide="calendar-check" class="h-4 w-4"></i> Secure Free Consultation slot
+          </button>
+
+        </form>
+
+      </section>
+
+      <!-- RIGHT COLUMN: APPOINTMENT VISUALIZER & TICKETS (5 Cols) -->
+      <section class="lg:col-span-5 space-y-6">
+        
+        <!-- Live Statistics Counter -->
+        <div class="bg-gradient-to-tr from-[#0047AB] to-[#003380] rounded-3xl p-6 text-white shadow-md space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-black uppercase tracking-wider bg-white/20 px-2 py-0.5 rounded-full font-mono-tech text-amber-300">
+              ● Live Scheduler Counter
+            </span>
+            <i data-lucide="activity" class="h-4 w-4 text-amber-300 animate-pulse"></i>
+          </div>
+          <div>
+            <h2 class="text-3xl font-black text-white leading-none">Free Consultations</h2>
+            <p class="text-[11px] text-blue-200 font-semibold mt-1">98.4% Students got admissions offers in their first round choice.</p>
+          </div>
+          <div class="border-t border-white/10 pt-3 grid grid-cols-2 gap-4 text-center">
+            <div class="bg-white/5 p-2 rounded-xl border border-white/5">
+              <div class="text-lg font-black text-amber-300">14 Slots</div>
+              <div class="text-[9px] text-gray-300 uppercase font-black tracking-wider">Remaining Today</div>
+            </div>
+            <div class="bg-white/5 p-2 rounded-xl border border-white/5">
+              <div class="text-lg font-black text-emerald-400">9.8 / 10</div>
+              <div class="text-[9px] text-gray-300 uppercase font-black tracking-wider">Student Rating</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Booked Tickets Panel (Dynamically Loaded from localStorage) -->
+        <div class="bg-white rounded-3xl border border-gray-200/80 p-5 sm:p-6 shadow-sm space-y-4">
+          <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+            <h3 class="text-xs font-black text-[#0047AB] uppercase tracking-wider font-mono-tech flex items-center gap-1.5">
+              <i data-lucide="ticket" class="h-4.5 w-4.5"></i> My Confirmed Slips
+            </h3>
+            <button onclick="clearAllAppointments()" class="text-[10px] text-red-500 hover:text-red-700 font-extrabold">
+              Clear Slips
+            </button>
+          </div>
+
+          <!-- List of slips -->
+          <div id="ticketsContainer" class="space-y-3 max-h-[360px] overflow-y-auto pr-1">
+            <!-- Dynamically populated by JS -->
+            <div id="noTicketsText" class="text-center py-8 text-gray-400 text-xs font-semibold">
+              <i data-lucide="calendar" class="h-10 w-10 text-gray-300 mx-auto mb-2"></i>
+              Abhi tak koi appointments nahi hain. Form fill karke confirm kijiye!
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Expert Counselor Assignment Reference -->
+        <div class="bg-white rounded-3xl border border-gray-200/80 p-5 shadow-sm space-y-3.5">
+          <h3 class="text-xs font-black text-slate-900 uppercase tracking-wider">Your Assigned Panel Expert</h3>
+          
+          <div class="flex items-center gap-3 bg-slate-50 p-3 rounded-2xl border border-slate-100/60">
+            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center font-black text-[#0047AB] text-xs">
+              DM
+            </div>
+            <div>
+              <h4 class="text-xs font-black text-gray-950">Dr. Elizabeth Moore</h4>
+              <p class="text-[10px] text-gray-400 font-bold">Aadmissions Director • Russell Group UK Specialist</p>
+            </div>
+          </div>
+          
+          <p class="text-[10.5px] text-gray-500 font-semibold leading-relaxed">
+            Apne selected destination ke mutabik hum automatically specialized direct guidance experts ko assign karte hain, taaki aapko perfect waiver advice mil sake.
+          </p>
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-gray-400 py-8 border-t border-gray-800">
+    <div class="max-w-6xl mx-auto px-4 text-center space-y-3">
+      <div class="text-white text-sm font-black uppercase tracking-wider">Career Wings Global</div>
+      <p class="text-[11px] max-w-md mx-auto leading-relaxed">
+        Offline compatible booking terminal. Save, download, and copy slips securely for counseling registration desk support.
+      </p>
+      <div class="text-[9px] text-gray-500 font-mono-tech">
+        © 2026 Career Wings Consultants Hub • Desktop Distributable
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT FOR DYNAMIC APPOINTMENTS SYSTEM -->
+  <script>
+    // Initialize Lucide Icons on load
+    document.addEventListener("DOMContentLoaded", function() {
+      lucide.createIcons();
+      setTodayAsMinDate();
+      renderSlips();
+    });
+
+    // Limit previous dates in picker
+    function setTodayAsMinDate() {
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('apptDate').setAttribute('min', today);
+      document.getElementById('apptDate').value = today;
+    }
+
+    // Render slips from LocalStorage
+    function renderSlips() {
+      const container = document.getElementById('ticketsContainer');
+      const saved = JSON.parse(localStorage.getItem('wings_appointments') || '[]');
+      
+      if (saved.length === 0) {
+        container.innerHTML = `
+          <div id="noTicketsText" class="text-center py-8 text-gray-400 text-xs font-semibold">
+            <i data-lucide="calendar" class="h-10 w-10 text-gray-300 mx-auto mb-2"></i>
+            Abhi tak koi appointments nahi hain. Form fill karke confirm kijiye!
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      container.innerHTML = '';
+      saved.forEach((slip, index) => {
+        // Map counselor based on country selection
+        let expert = "Dr. Elizabeth Moore";
+        let sub = "UK Specialist";
+        if (slip.country === "Canada") { expert = "Prof. Alan Stark"; sub = "Canada PGWP Advisor"; }
+        if (slip.country === "Australia") { expert = "Sarah Jenkins"; sub = "PR Pathway Consultant"; }
+        if (slip.country === "Germany") { expert = "Dr. Klaus Fischer"; sub = "DAAD Scholarship Expert"; }
+        if (slip.country === "USA") { expert = "Michael Vance"; sub = "Ivy League Counsel"; }
+
+        const slipHtml = `
+          <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 space-y-3 shadow-3xs relative overflow-hidden transition-all hover:border-blue-200">
+            <!-- Top indicator -->
+            <div class="flex items-center justify-between text-[10px] font-mono-tech">
+              <span class="text-[#0047AB] font-black uppercase">🎫 SLIP ID: #CW-${1000 + index}</span>
+              <button onclick="deleteSlip(${index})" class="text-red-500 hover:text-red-700 font-extrabold flex items-center gap-1">
+                Cancel
+              </button>
+            </div>
+            
+            <!-- Details -->
+            <div class="space-y-1">
+              <h4 class="text-xs font-black text-slate-900">${slip.name}</h4>
+              <p class="text-[10px] text-gray-500 font-bold">${slip.email} • ${slip.phone}</p>
+            </div>
+
+            <!-- Meta info grid -->
+            <div class="grid grid-cols-2 gap-2 text-[10px] font-bold text-gray-600 bg-white p-2.5 rounded-xl border border-slate-100">
+              <div>
+                <span class="text-[9px] block text-gray-400">COUNTRY &amp; INTAKE</span>
+                <span class="text-slate-800">${slip.country} (${slip.intake})</span>
+              </div>
+              <div>
+                <span class="text-[9px] block text-gray-400">TIMING &amp; DATE</span>
+                <span class="text-slate-800">${slip.date} @ ${slip.time}</span>
+              </div>
+            </div>
+
+            <!-- Assigned Expert info -->
+            <div class="flex items-center gap-2 pt-1">
+              <div class="w-6 h-6 rounded-full bg-[#0047AB]/15 flex items-center justify-center text-[#0047AB] font-bold text-[9px]">
+                ${expert.split(' ').pop().substring(0,2).toUpperCase()}
+              </div>
+              <div>
+                <span class="text-[9px] block text-gray-400">Assigned Expert Counselor:</span>
+                <span class="text-[10px] text-[#0047AB] font-black">${expert} (${sub})</span>
+              </div>
+            </div>
+
+            <!-- Join meeting links -->
+            <div class="pt-2">
+              <a href="https://meet.google.com/mock-cw-appointment" target="_blank" class="w-full inline-flex items-center justify-center gap-1 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-[10px] rounded-lg transition-all">
+                <i data-lucide="video" class="h-3 w-3"></i>
+                Join Google Meet Room
+              </a>
+            </div>
+          </div>
+        `;
+        container.innerHTML += slipHtml;
+      });
+
+      lucide.createIcons();
+    }
+
+    // Clear form, show alerts and confirm appointment
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('studentName').value.trim();
+      const email = document.getElementById('studentEmail').value.trim();
+      const phone = document.getElementById('studentPhone').value.trim();
+      const country = document.getElementById('targetCountry').value;
+      const intake = document.getElementById('targetIntake').value;
+      const date = document.getElementById('apptDate').value;
+      const time = document.getElementById('apptTime').value;
+
+      const errorAlert = document.getElementById('errorAlert');
+      const successAlert = document.getElementById('successAlert');
+
+      // Validation
+      errorAlert.classList.add('hidden');
+      successAlert.classList.add('hidden');
+
+      if (!name || !email || !phone || !date) {
+        errorAlert.innerHTML = "❌ Please fill out all required fields!";
+        errorAlert.classList.remove('hidden');
+        return;
+      }
+
+      // Save into list
+      const currentList = JSON.parse(localStorage.getItem('wings_appointments') || '[]');
+      currentList.push({ name, email, phone, country, intake, date, time });
+      localStorage.setItem('wings_appointments', JSON.stringify(currentList));
+
+      // Show confirmation
+      successAlert.classList.remove('hidden');
+      document.getElementById('submitBtn').disabled = true;
+      document.getElementById('submitBtn').classList.add('opacity-50');
+
+      setTimeout(() => {
+        // Clear inputs & reset state
+        document.getElementById('appointmentForm').reset();
+        document.getElementById('submitBtn').disabled = false;
+        document.getElementById('submitBtn').classList.remove('opacity-50');
+        successAlert.classList.add('hidden');
+        setTodayAsMinDate();
+        renderSlips();
+      }, 3500);
+    }
+
+    // Delete slip
+    function deleteSlip(index) {
+      if (confirm("Kya aap sach me is appointment slip ko cancel karna chahte hain?")) {
+        const list = JSON.parse(localStorage.getItem('wings_appointments') || '[]');
+        list.splice(index, 1);
+        localStorage.setItem('wings_appointments', JSON.stringify(list));
+        renderSlips();
+      }
+    }
+
+    // Clear all
+    function clearAllAppointments() {
+      if (confirm("Kya aap saari appointment slips ko reset karna chahte hain?")) {
+        localStorage.removeItem('wings_appointments');
+        renderSlips();
+      }
+    }
+  </script>
+
+</body>
+</html>

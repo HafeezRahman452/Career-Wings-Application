@@ -1,6 +1,7 @@
 import express from "express";
 import path from "path";
 import cors from "cors";
+import AdmZip from "adm-zip";
 import { createServer as createViteServer } from "vite";
 import { db, initializeDatabase } from "./database";
 
@@ -16,6 +17,41 @@ async function startServer() {
   app.use(cors());
 
   // === API ENDPOINTS ===
+
+  // Download custom static HTML folder as a ZIP file
+  app.get("/api/download-html-zip", (req, res) => {
+    try {
+      const folderPath = path.join(process.cwd(), "Career Wings Html 16-07-2026");
+      const zip = new AdmZip();
+      zip.addLocalFolder(folderPath, "Career Wings Html 16-07-2026");
+      const buffer = zip.toBuffer();
+      res.set("Content-Type", "application/zip");
+      res.set("Content-Disposition", 'attachment; filename="Career Wings Html 16-07-2026.zip"');
+      res.send(buffer);
+    } catch (err: any) {
+      res.status(500).json({ error: "Failed to create ZIP archive", details: err.message });
+    }
+  });
+
+  // Download custom static HTML as a single file
+  app.get("/api/download-single-html", (req, res) => {
+    try {
+      const filePath = path.join(process.cwd(), "Career Wings Html 16-07-2026", "index.html");
+      res.download(filePath, "Career Wings Html 16-07-2026.html");
+    } catch (err: any) {
+      res.status(500).json({ error: "Failed to download HTML file", details: err.message });
+    }
+  });
+
+  // Download custom static Appointment HTML as a single file
+  app.get("/api/download-appointment-html", (req, res) => {
+    try {
+      const filePath = path.join(process.cwd(), "Career Wings Html 16-07-2026", "appointment.html");
+      res.download(filePath, "Career-Wings-Appointment.html");
+    } catch (err: any) {
+      res.status(500).json({ error: "Failed to download Appointment HTML file", details: err.message });
+    }
+  });
 
   // 1. APPOINTMENTS
   app.get("/api/appointments", async (req, res) => {
