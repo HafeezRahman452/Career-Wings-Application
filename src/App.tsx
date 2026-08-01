@@ -89,7 +89,7 @@ export default function App() {
   const [isCounsellingModalOpen, setIsCounsellingModalOpen] = useState<boolean>(false);
   const [isTourOpen, setIsTourOpen] = useState<boolean>(false);
   const [prefilledDetails, setPrefilledDetails] = useState<string>("");
-  const [showDownloadPanel, setShowDownloadPanel] = useState<boolean>(true);
+  const [showDownloadPanel, setShowDownloadPanel] = useState<boolean>(false);
   const [isSavedModalOpen, setIsSavedModalOpen] = useState<boolean>(false);
   const [activeTestPrepTab, setActiveTestPrepTab] = useState<string>("ielts");
   const [finderCountryFilter, setFinderCountryFilter] = useState<string>("all");
@@ -1221,8 +1221,9 @@ export default function App() {
 
       </footer>
 
-      {/* Floating HTML Download Hub (Roman English) */}
-      <AnimatePresence>
+      {/* Floating HTML Download Hub */}
+      {false && (
+        <AnimatePresence>
         {showDownloadPanel ? (
           <motion.div 
             initial={{ opacity: 0, scale: 0.9, y: 50 }}
@@ -1318,6 +1319,7 @@ export default function App() {
           </motion.button>
         )}
       </AnimatePresence>
+      )}
 
     </div>
   );
