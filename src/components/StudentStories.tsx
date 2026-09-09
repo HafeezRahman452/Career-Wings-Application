@@ -85,8 +85,8 @@ export default function StudentStories() {
         <div className="space-y-8">
           <div className="max-w-xl space-y-2">
             <span className="text-[#0047AB] font-extrabold tracking-widest text-[11px] uppercase block">SUCCESS DIARIES & LIVE MOCKS</span>
-            <h3 className="text-2xl md:text-3xl font-black text-gray-950">Featured Scholar Video Briefings</h3>
-            <p className="text-xs text-gray-500 font-semibold">Watch actual success diaries, preparation breakdowns, and pre-departure briefing insights.</p>
+            <h3 className="text-2xl md:text-3xl font-black text-gray-950 dark:text-white">Featured Scholar Video Briefings</h3>
+            <p className="text-xs text-gray-500 dark:text-slate-400 font-semibold">Watch actual success diaries, preparation breakdowns, and pre-departure briefing insights.</p>
           </div>
 
           <div id="student-success-videos-grid" className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -118,7 +118,7 @@ export default function StudentStories() {
             ].map((video) => (
               <div 
                 key={video.id}
-                className="bg-white rounded-3xl border border-gray-150 overflow-hidden shadow-xs hover:shadow-md hover:border-blue-300 transition-all group flex flex-col justify-between"
+                className="bg-white dark:bg-slate-950 rounded-3xl border border-gray-150 dark:border-slate-800 overflow-hidden shadow-xs hover:shadow-md hover:border-blue-300 transition-all group flex flex-col justify-between"
               >
                 <div className="aspect-video w-full bg-slate-900 relative">
                   <iframe
@@ -132,10 +132,10 @@ export default function StudentStories() {
                 <div className="p-5 space-y-2.5">
                   <div className="flex items-center justify-between text-[10px] font-extrabold text-orange-600 uppercase">
                     <span>{video.student}</span>
-                    <span className="bg-orange-50 text-orange-700 px-2 py-0.5 rounded-md text-[9px] shrink-0 font-black">{video.duration}</span>
+                    <span className="bg-orange-50 dark:bg-orange-950/60 text-orange-700 dark:text-orange-400 px-2 py-0.5 rounded-md text-[9px] shrink-0 font-black">{video.duration}</span>
                   </div>
-                  <h4 className="font-extrabold text-sm text-gray-950 leading-snug group-hover:text-[#0047AB] transition-colors">{video.title}</h4>
-                  <p className="text-[11px] text-gray-500 font-semibold leading-relaxed">{video.desc}</p>
+                  <h4 className="font-extrabold text-sm text-gray-950 dark:text-white leading-snug group-hover:text-[#0047AB] dark:group-hover:text-blue-400 transition-colors">{video.title}</h4>
+                  <p className="text-[11px] text-gray-500 dark:text-slate-400 font-semibold leading-relaxed">{video.desc}</p>
                 </div>
               </div>
             ))}
@@ -153,8 +153,8 @@ export default function StudentStories() {
               className="fixed inset-0 bg-gray-950/75 backdrop-blur-md transition-opacity" 
             />
 
-            <div className="flex min-h-full items-center justify-center p-4">
-              <div className="relative transform overflow-hidden rounded-3xl bg-white text-gray-900 shadow-2xl transition-all w-full max-w-2xl border border-gray-100 overflow-hidden animate-slide-up">
+            <div className="flex min-h-full items-center justify-center p-3 sm:p-4">
+              <div className="relative transform rounded-3xl bg-white dark:bg-slate-900 text-gray-900 dark:text-white shadow-2xl transition-all w-full max-w-2xl border border-gray-100 dark:border-slate-800 max-h-[90vh] overflow-y-auto animate-slide-up">
                 
                 {/* Content block */}
                 <div className="grid grid-cols-1 sm:grid-cols-12">

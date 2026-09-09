@@ -54,7 +54,7 @@ export default function BlogPage({ onBack, onBookCounselling }: BlogPageProps) {
       date: "June 08, 2026",
       readTime: "7 min read",
       category: "Admissions",
-      imageUrl: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=600",
+      imageUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1200",
       keywordsUsed: ["How to Study Abroad after 12th", "Study Abroad Requirements"],
       h1Title: "How to Study Abroad after 12th: The Complete Undergraduate Blueprint",
       sections: [

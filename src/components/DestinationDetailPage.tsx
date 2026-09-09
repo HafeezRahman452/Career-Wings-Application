@@ -1624,10 +1624,17 @@ export default function DestinationDetailPage({
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto">
             {/* Main Hero Photo */}
             <div className="md:col-span-7 flex flex-col bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-xs border border-gray-150 dark:border-slate-800 group">
-              <div className="h-[240px] sm:h-[320px] overflow-hidden relative">
+              <div className="h-[240px] sm:h-[320px] overflow-hidden relative bg-slate-100 dark:bg-slate-800">
                 <img 
                   src={data.mainImage} 
-                  alt={`${data.name} Campus`} 
+                  alt={`Study & Work in ${data.name} - Top Universities, Campus Life & Student Visa | Career Wings Consultants`} 
+                  title={`Study in ${data.name} - Career Wings Consultants`}
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1200&q=85";
+                  }}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
                 />
               </div>
@@ -1640,10 +1647,17 @@ export default function DestinationDetailPage({
             {/* Side Photo 2 & 3 */}
             <div className="md:col-span-5 grid grid-rows-2 gap-6 h-auto">
               <div className="flex flex-col bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-xs border border-gray-150 dark:border-slate-800 group">
-                <div className="h-[120px] sm:h-[135px] overflow-hidden relative">
+                <div className="h-[120px] sm:h-[135px] overflow-hidden relative bg-slate-100 dark:bg-slate-800">
                   <img 
                     src={data.sideImage1} 
-                    alt={`${data.name} Student Lifestyle`} 
+                    alt={`${data.name} University Research Laboratories, STEM Innovation & Academic Facilities`} 
+                    title={`${data.name} Academic Facilities & Laboratories`}
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=85";
+                    }}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
                   />
                 </div>
@@ -1653,10 +1667,17 @@ export default function DestinationDetailPage({
               </div>
 
               <div className="flex flex-col bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-xs border border-gray-150 dark:border-slate-800 group">
-                <div className="h-[120px] sm:h-[135px] overflow-hidden relative">
+                <div className="h-[120px] sm:h-[135px] overflow-hidden relative bg-slate-100 dark:bg-slate-800">
                   <img 
                     src={data.sideImage2} 
-                    alt={`${data.name} City Scenery`} 
+                    alt={`${data.name} High Employment Rate Metros & Post-Study Career Hubs - Career Wings`} 
+                    title={`${data.name} High Employment Rate Metros - Career Wings Consultants`}
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1514395462725-fb4566210144?auto=format&fit=crop&w=1200&q=85";
+                    }}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
                   />
                 </div>
@@ -1804,6 +1825,8 @@ export default function DestinationDetailPage({
                   <div className="h-44 relative overflow-hidden">
                     <img 
                       alt={country.name} 
+                      referrerPolicy="no-referrer"
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                       src={country.bgImage} 
                     />

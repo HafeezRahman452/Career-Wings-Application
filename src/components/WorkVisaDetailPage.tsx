@@ -209,11 +209,17 @@ export default function WorkVisaDetailPage({
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto">
           {/* Main Hero Photo */}
           <div className="md:col-span-7 flex flex-col bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-xs border border-gray-150 dark:border-slate-800 group">
-            <div className="h-[240px] sm:h-[320px] overflow-hidden relative">
+            <div className="h-[240px] sm:h-[320px] overflow-hidden relative bg-slate-100 dark:bg-slate-800">
               <img 
                 src={data.mainImage} 
                 alt={`${data.name} Environment in ${data.country} - Career Wings Consultants, Study Abroad Consultants`} 
                 title={`${data.name} Destination Landscapes - Career Wings Consultants (Study Abroad Consultants) - Best Visa Agency`}
+                loading="lazy"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&w=1200&q=85";
+                }}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
               />
             </div>
@@ -233,11 +239,17 @@ export default function WorkVisaDetailPage({
           {/* Side Photo 2 & 3 */}
           <div className="md:col-span-5 grid grid-rows-2 gap-6 h-auto">
             <div className="flex flex-col bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-xs border border-gray-150 dark:border-slate-800 group">
-              <div className="h-[120px] sm:h-[135px] overflow-hidden relative">
+              <div className="h-[120px] sm:h-[135px] overflow-hidden relative bg-slate-100 dark:bg-slate-800">
                 <img 
                   src={data.sideImage1} 
                   alt={`${data.name} Commercial Hub Services - Career Wings Consultants, Study Abroad Consultants`} 
                   title={`${data.name} Business Parks - Study Abroad Consultants & Best Visa Agency Services`}
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=85";
+                  }}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
                 />
               </div>
@@ -248,11 +260,17 @@ export default function WorkVisaDetailPage({
             </div>
 
             <div className="flex flex-col bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-xs border border-gray-150 dark:border-slate-800 group">
-              <div className="h-[120px] sm:h-[135px] overflow-hidden relative">
+              <div className="h-[120px] sm:h-[135px] overflow-hidden relative bg-slate-100 dark:bg-slate-800">
                 <img 
                   src={data.sideImage2} 
                   alt={`${data.name} Success and Team Meeting - Career Wings Consultants, Study Abroad Consultants`} 
                   title={`${data.name} Job Offer Approvals - Career Wings Consultants Study Abroad Consultants`}
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1514395462725-fb4566210144?auto=format&fit=crop&w=1200&q=85";
+                  }}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
                 />
               </div>

@@ -992,8 +992,8 @@ export default function App() {
             onClick={() => setIsSavedModalOpen(false)} 
             className="fixed inset-0 bg-slate-950/60 backdrop-blur-xs transition-opacity" 
           />
-          <div className="flex min-h-full items-center justify-center p-4">
-            <div className="relative transform overflow-hidden rounded-3xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 p-6 sm:p-8 text-left shadow-2xl w-full max-w-lg transition-all animate-slide-up">
+          <div className="flex min-h-full items-center justify-center p-3 sm:p-4">
+            <div className="relative transform overflow-hidden rounded-3xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 p-6 sm:p-8 text-left shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto transition-all animate-slide-up">
               <div className="absolute top-4 right-4">
                 <button
                   onClick={() => setIsSavedModalOpen(false)}
@@ -1075,8 +1075,8 @@ export default function App() {
             onClick={() => setIsCounsellingModalOpen(false)} 
             className="fixed inset-0 bg-slate-950/70 backdrop-blur-sm transition-opacity" 
           />
-          <div className="flex min-h-full items-center justify-center p-4">
-            <div className="relative transform overflow-hidden rounded-3xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 p-1 text-left shadow-2xl w-full max-w-2xl transition-all animate-slide-up">
+          <div className="flex min-h-full items-center justify-center p-3 sm:p-4">
+            <div className="relative transform overflow-hidden rounded-3xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 p-1 text-left shadow-2xl w-full max-w-2xl max-h-[92vh] overflow-y-auto transition-all animate-slide-up">
               <button
                 onClick={() => setIsCounsellingModalOpen(false)}
                 className="absolute top-4 right-4 z-10 p-2.5 rounded-full bg-black/60 text-white hover:bg-black/80 shadow-md"

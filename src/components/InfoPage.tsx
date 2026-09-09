@@ -387,7 +387,7 @@ export default function InfoPage({ pageType, onBack, onBookCounselling, setCurre
           tagline: "Unlock standard of life gains, exponential salary scopes, and world-class learning networks.",
           icon: <Target className="h-8 w-8 text-cyan-600" />,
           bgColor: "bg-cyan-50/50",
-          imageUrl: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800",
+          imageUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1200",
           introParagraph: "Pursuing a global degree is a calculated investment that delivers transformative dividends. It bridges you straight to world-class learning systems, cutting-edge industries, multicultural teams, and global lifestyle standards that are inaccessible locally.",
           sections: [
             {
@@ -680,7 +680,7 @@ export default function InfoPage({ pageType, onBack, onBookCounselling, setCurre
           tagline: "Your absolute trusted partner in global education milestones.",
           icon: <Sparkles className="h-8 w-8 text-blue-600" />,
           bgColor: "bg-blue-50/50",
-          imageUrl: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800",
+          imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200",
           introParagraph: "Career Wings study abroad consultants and visa agency provides end-to-end support, enabling beautiful, stress-free admissions and visa approvals globally.",
           sections: [
             {
@@ -763,8 +763,14 @@ export default function InfoPage({ pageType, onBack, onBookCounselling, setCurre
         <div className="absolute inset-0 z-0">
           <img 
             src={content.imageUrl} 
-            alt={content.title}
+            alt={`${content.title} - Career Wings Consultants, Study Abroad Consultants`}
+            title={content.title}
+            loading="lazy"
             referrerPolicy="no-referrer"
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1200";
+            }}
             className="w-full h-full object-cover object-center opacity-30 transform hover:scale-105 transition-transform duration-700" 
           />
           <div className="absolute inset-0 bg-linear-to-b from-slate-950/80 via-slate-900/90 to-slate-950" />

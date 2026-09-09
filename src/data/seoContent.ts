@@ -51,9 +51,9 @@ export const SEO_DESTINATIONS: SEODestinationDetail[] = [
     id: "australia",
     name: "Australia",
     tagline: "Your Ultimate Guide to Higher Education, Post-Study Work Rights, and PR Pathways",
-    mainImage: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=800&q=85",
-    sideImage1: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=85",
-    sideImage2: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=85",
+    mainImage: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1200&q=85",
+    sideImage1: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=85",
+    sideImage2: "https://images.unsplash.com/photo-1514395462725-fb4566210144?auto=format&fit=crop&w=1200&q=85",
     metaTitle: "Study in Australia | Best Study Abroad Consultants - Career Wings Consultants",
     metaDescription: "Ready to Study in Australia? Partner with Career Wings Consultants to secure top Scholarships to Study in Australia and gain entry to the Top University in Aus. Free counselling!",
     schemaKeywords: [
@@ -85,14 +85,14 @@ export const SEO_DESTINATIONS: SEODestinationDetail[] = [
         title: "2. Why Choose Career Wings Consultants to Study Abroad in Australia?",
         paragraphs: [
           "One of the standout advantages when you decide to Study Abroad in Australia is the unparalleled quality of life and the elite immigration benefits offered by the government. Cities like Melbourne, Sydney, Adelaide, and Brisbane are consistently listed in the world’s top 10 most liveable cities for international students, offering safe, vibrant, and multi-cultural environments. Career Wings Consultants is committed to making this journey smooth, providing complete file assessments and student guidance.",
-          "Moreover, by opting to Study Abroad in Australia, you can leverage generous part-time working allowances. International students can work up to 48 hours per fortnight while classes are in session and unlimited hours during scheduled academic holidays. This policy allows students to offset standard living costs while cultivating invaluable local office experience. Crucially, Australia’s Post-Study Work Visa (Temporary Graduate Subclass 485) grants students stay-back rights of up to 4 or 5 years."
+          "Moreover, by opting to Study Abroad in Australia, you can leverage generous part-time working allowances. International students can work up to 48 hours per fortnight while classes are in session and unlimited hours during scheduled academic holidays. This policy allows students to offset standard living costs while cultivating invaluable local office experience. Crucially, Australia’s Post-Higher Education Work Visa (Subclass 485) grants students stay-back rights of 2 years for Bachelors, 2 years for Masters by coursework, and 3 years for Masters by research/PhD, with an additional 1 to 2 years for studying in designated regional centers (age limit up to 35 for coursework graduates)."
         ]
       },
       {
         title: "3. Finding the Top University in Aus",
         paragraphs: [
           "If you are searching for a high-ranking Top University in Aus, Career Wings Consultants is your trusted helper. The nation hosts 43 universities, with 8 elite research institutions making up the highly coveted 'Group of Eight' (Go8). Each Top University in Aus, including the University of Melbourne, University of Sydney, and UNSW, consistently ranks in the global top 100 on the QS World University Rankings.",
-          "Whether you seek Computer Science, Business Management, Health Sciences, or engineering fields, choosing a Top University in Aus ensures top-tier academic rigour. Career Wings Consultants guides candidates on how to apply directly, customize the Statement of Purpose (SOP), and pass the Genuine Student Test (GST) guidelines easily."
+          "Whether you seek Computer Science, Business Management, Health Sciences, or engineering fields, choosing a Top University in Aus ensures top-tier academic rigour. Career Wings Consultants guides candidates on how to apply directly, customize the Statement of Purpose (SOP), and pass the mandatory Genuine Student (GS) requirement guidelines easily."
         ]
       },
       {
@@ -121,20 +121,21 @@ export const SEO_DESTINATIONS: SEODestinationDetail[] = [
       "IELTS: UG requires overall 6.0 (no band < 5.5). PG requires overall 6.5 (no band < 6.0).",
       "PTE Score: Minimum 50 for UG, 58 for PG courses.",
       "Financial Capability: Proof of liquid funds to cover 1st year tuition + AU$29,710 living costs.",
-      "Genuine Student Test (GST): Clear declaration of academic intentions and hometown links."
+      "Genuine Student (GS) Requirement: Evidence of genuine academic progression, course relevance, and economic ties to home country."
     ],
     visaSteps: [
       "1. Secure your formal Letter of Offer from a CRICOS-registered Australian institution.",
       "2. Accept the offer and submit tuition deposit to receive the Confirmation of Enrolment (CoE).",
       "3. Purchase Overseas Student Health Cover (OSHC) for the total duration of studies.",
-      "4. Complete your Statement of Purpose (SOP) tailored to GST standards.",
+      "4. Complete your Statement of Purpose (SOP) tailored to modern Genuine Student (GS) standards.",
       "5. Create ImmiAccount, upload documentation, and submit Student Visa Subclass 500.",
       "6. Complete biometric testing and designated medical checkups at approved centers."
     ],
     faqs: [
-      { q: "Can I transition from subclass 500 to work visa?", a: "Yes, once you finish an eligible 2-year degree, you can transition to the Subclass 485 Graduate work visa." },
+      { q: "Can I transition from subclass 500 to work visa?", a: "Yes, graduates of eligible CRICOS degrees can transition to the Subclass 485 Post-Higher Education Work stream (2 years for Bachelors, 2 years for Masters by coursework, 3 years for Masters by research/PhD, with an age limit of up to 35 for coursework graduates)." },
       { q: "Are scholarships available?", a: "Yes, Australian universities offer competitive merit scholar-grants ranging from AU$5,050 to 100% tuition-free waivers." },
-      { q: "Is GTE replaced by GST?", a: "Yes, Australia has transitionally introduced the Genuine Student Test (GST) to focus on students' direct career alignment." }
+      { q: "What replaced the old GTE requirement?", a: "Australia introduced the Genuine Student (GS) requirement, replacing GTE with targeted contextual questions assessing program relevance, career prospects, and genuine study intent." },
+      { q: "What is the new financial capacity requirement for Australia?", a: "Applicants must show minimum liquid funds of AUD $29,710 for 12 months of living costs, plus 1st-year tuition and return travel expenses." }
     ]
   },
   {
@@ -213,14 +214,15 @@ export const SEO_DESTINATIONS: SEODestinationDetail[] = [
     ],
     visaSteps: [
       "1. Obtain your unconditional study offer and request Confirmation of Acceptance for Studies (CAS).",
-      "2. Gather financial evidence holding required funds (£12,006 inside London / £9,207 outside London) for 28 consecutive days.",
+      "2. Gather financial evidence holding required maintenance funds (£1,483/month inside London up to 9 months = £13,347 / £1,136/month outside London up to 9 months = £10,224) for 28 consecutive days.",
       "3. Pay the mandatory IHS health surcharge and visa application processing fees.",
       "4. Book biometric appointments at your regional VFS Global center.",
       "5. Submit your completed online application under the standard UK Student Route."
     ],
     faqs: [
-      { q: "Is IELTS mandatory?", a: "Many universities offer IELTS exemptions if you scored highly in English during your high school studies." },
-      { q: "What is the stay-back period?", a: "The Graduate Route allows you to live and work in the UK for up to 2 years (3 years for PhD graduates)." }
+      { q: "Can international students bring dependents to the UK?", a: "Under updated UK Home Office rules, international students on taught postgraduate Master courses can no longer bring family dependents. Only students on postgraduate research degrees (PhD/Doctorate) and government-sponsored scholars may bring dependents." },
+      { q: "What is the stay-back period under the UK Graduate Route?", a: "The UK Graduate Route provides an unsponsored 2-year post-study work visa for Bachelor and Master graduates (3 years for PhD graduates) with unrestricted employment rights." },
+      { q: "Can students switch to a UK work visa before graduation?", a: "No, under Home Office regulations, students cannot switch to a Skilled Worker or other work visa until they have successfully completed their course of study." }
     ]
   },
   {
@@ -388,9 +390,9 @@ export const SEO_DESTINATIONS: SEODestinationDetail[] = [
     id: "ireland",
     name: "Ireland",
     tagline: "EMEA Tech Capital: Global Corporate Headquarters and Robust Irish Employment Pathways",
-    mainImage: "https://images.unsplash.com/photo-1549918830-11ecf3bef31e?auto=format&fit=crop&w=800&q=85",
-    sideImage1: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=85",
-    sideImage2: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=85",
+    mainImage: "https://images.unsplash.com/photo-1549918864-48ac978761a4?auto=format&fit=crop&w=1200&q=85",
+    sideImage1: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=85",
+    sideImage2: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1200&q=85",
     metaTitle: "Study in Ireland | Best Study Consultants - Career Wings Consultants",
     metaDescription: "Aiming to Study in Ireland? Trust Career Wings Consultants. Find top Scholarships to Study in Ireland and gain access to the finest Top University in Ireland.",
     schemaKeywords: [
@@ -468,9 +470,9 @@ export const SEO_DESTINATIONS: SEODestinationDetail[] = [
     id: "canada",
     name: "Canada",
     tagline: "PR Pathways, High Quality Study, and Stellar PGWP Stay-Back Allowances",
-    mainImage: "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&w=800&q=85",
-    sideImage1: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5c?auto=format&fit=crop&w=800&q=85",
-    sideImage2: "https://images.unsplash.com/photo-1519074002996-a69e7ac46a42?auto=format&fit=crop&w=800&q=85",
+    mainImage: "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&w=1200&q=85",
+    sideImage1: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=85",
+    sideImage2: "https://images.unsplash.com/photo-1519074002996-a69e7ac46a42?auto=format&fit=crop&w=1200&q=85",
     metaTitle: "Study in Canada | Study Abroad Experts - Career Wings Consultants",
     metaDescription: "Want to Study in Canada? Partner with Career Wings Consultants to optimize your visa, secure study Scholarships to Study in Canada, and find a Top University in Canada.",
     schemaKeywords: [
@@ -506,7 +508,7 @@ export const SEO_DESTINATIONS: SEODestinationDetail[] = [
         title: "3. Securing Admission at a Top University in Canada",
         paragraphs: [
           "Want to study at a Top University in Canada? Renowned giants like the University of Toronto, University of British Columbia (UBC), and McGill University rank at the top of world academic indices. Receiving your degree from a Top University in Canada ensures top-priority recruitment in global corporations.",
-          "Career Wings Consultants provides direct, step-by-step counselling to obtain your Letter of Acceptance (LOA) from a Top University in Canada. We optimize your Statement of Purpose (SOP) to pass IRCC requirements easily, ensuring maximum approval rates."
+          "Career Wings Consultants provides direct, step-by-step counselling to obtain your Letter of Acceptance (LOA) and required Provincial Attestation Letter (PAL) for Canada. We optimize your Statement of Purpose (SOP) to satisfy IRCC genuine study guidelines, ensuring maximum approval rates."
         ]
       },
       {
@@ -530,26 +532,28 @@ export const SEO_DESTINATIONS: SEODestinationDetail[] = [
     ],
     eligibilityChecklist: [
       "Academics: High School 65%+ or Bachelors GPA 2.8/4.0 overall.",
-      "IELTS: Minimum overall 6.5 (with all individual bands 6.0+ for SDS pathway).",
+      "Language Proficiency: Minimum IELTS 6.5 (or PTE 60+) with strong communication scores for university and college programs.",
       "Study Gap: Up to 5 years accepted with robust professional validation."
     ],
     visaSteps: [
       "1. Secure an official Letter of Acceptance (LOA) from a Designated Learning Institution (DLI).",
-      "2. Complete your upfront medical checkup at a panel physician and pay your 1st-year tuition fees.",
-      "3. Purchase your GIC certificate of CAD$20,635 from an approved Canadian bank.",
-      "4. Submit your Study Permit application via the IRCC online portal under SDS guidelines."
+      "2. Obtain your Provincial Attestation Letter (PAL) through your educational institution.",
+      "3. Purchase your GIC certificate of CAD$20,635 from an approved Canadian financial institution (Scotiabank, CIBC, ICICI, etc.).",
+      "4. Complete upfront medical examination and submit your Study Permit application through the IRCC portal."
     ],
     faqs: [
-      { q: "Is SDS faster?", a: "Yes, the Student Direct Stream (SDS) offers prioritized study permit processing in just 20 days." }
+      { q: "What is the Provincial Attestation Letter (PAL) requirement?", a: "IRCC requires most international post-secondary undergraduate and college applicants to provide a Provincial Attestation Letter (PAL) issued by their chosen province alongside the DLI Letter of Acceptance." },
+      { q: "What are the new PGWP rules for Canada?", a: "Graduates of university degree programs (Bachelor, Master, Doctorate) remain eligible for up to a 3-year PGWP with Canadian Language Benchmark (CLB) 7. College diploma graduates must meet CLB 5 and graduate from fields linked to long-term labour shortages." },
+      { q: "Can spouses of international students in Canada get open work permits?", a: "Spousal open work permits are restricted to spouses of students enrolled in Master degree programs of 16+ months or doctoral/professional degree programs." }
     ]
   },
   {
     id: "europe",
     name: "Europe",
     tagline: "Access Exceptional Public Universities, Low Tuition Fees, and Direct Schengen Career Entry",
-    mainImage: "https://images.unsplash.com/photo-1485088412889-60d8c39de6c6?auto=format&fit=crop&w=800&q=85",
-    sideImage1: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=85",
-    sideImage2: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=85",
+    mainImage: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1200&q=85",
+    sideImage1: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=85",
+    sideImage2: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85",
     metaTitle: "Study in Europe | Schengen Advisors - Career Wings Consultants",
     metaDescription: "Ready to Study in Europe? Career Wings Consultants helps you locate elite Scholarships to Study in Europe and find your ideal Top University in Europe. Call us!",
     schemaKeywords: [
@@ -688,10 +692,10 @@ export const SEO_DESTINATIONS: SEODestinationDetail[] = [
       "Summer Semester (Secondary): Starts April - Secondary entry. Applications open December to January 15."
     ],
     eligibilityChecklist: [
-      "Academic Eligibility: Minimum 65%+ in high school or bachelors (must pass Uni-Assist checks).",
-      "IELTS score: 6.0 to 6.5 minimum (depending on university). Duolingo generally not accepted.",
-      "German Language Option: B2 or C1 level is mandatory if you choose German-taught tracks.",
-      "Financial Proof: Certified blocked account holding €11,904 before visa application."
+      "Academic Eligibility: Minimum 65%+ in high school or bachelors (evaluated via Uni-Assist or Anabin).",
+      "APS Certificate: Mandatory academic verification certificate from the German Academic Evaluation Centre (APS) for Indian, Chinese, and Vietnamese applicants.",
+      "IELTS / German Proficiency: Minimum 6.5 for English-taught Master programs, or B2/C1 TestDaF/Goethe for German-taught degrees.",
+      "Financial Proof (Sperrkonto): Certified blocked account holding €11,904 (€992/month) before visa appointment."
     ],
     visaSteps: [
       "1. Obtain a formal admission letter from a recognized German public or private university.",
@@ -702,17 +706,18 @@ export const SEO_DESTINATIONS: SEODestinationDetail[] = [
       "6. Attend your embassy interview and submit biometrics for national D-Visa dispatch."
     ],
     faqs: [
-      { q: "Is German language mandatory?", a: "No, there are hundreds of master's and bachelor's programs instructed entirely in English." },
-      { q: "Can I work part-time?", a: "Yes, international students are legally allowed to work 140 full days or 280 half days per year." }
+      { q: "Is German language proficiency mandatory?", a: "No, thousands of accredited Master and Bachelor programs are taught 100% in English, though conversational A1/A2 German is recommended for daily life and internships." },
+      { q: "What are the updated part-time work limits in Germany?", a: "International students from non-EU countries are legally permitted to work up to 140 full days or 280 half days per calendar year (increased from previous 120 full days)." },
+      { q: "What is the Opportunity Card (Chancenkarte)?", a: "Germany introduced the Opportunity Card (Chancenkarte), a points-based system allowing qualified international professionals and graduates to enter Germany for up to one year to find qualified employment." }
     ]
   },
   {
     id: "france",
     name: "France",
     tagline: "Excel in World-Class Grande Écoles, Elite Business Schools, and Cultural Metros",
-    mainImage: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=85",
-    sideImage1: "https://images.unsplash.com/photo-1499856871958-5b9647a640d6?auto=format&fit=crop&w=800&q=85",
-    sideImage2: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=85",
+    mainImage: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=85",
+    sideImage1: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=85",
+    sideImage2: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=85",
     metaTitle: "Study in France | Premium Career Counselling - Career Wings Consultants",
     metaDescription: "Planning to Study in France? Secure competitive Scholarships to Study in France and gain admittance to the finest Top University in France with Career Wings.",
     schemaKeywords: [
@@ -936,9 +941,9 @@ export const SEO_WORK_VISAS: SEOWorkVisaDetail[] = [
     name: "Canada Work Visa (LMIA & IMIP Streams)",
     tagline: "Obtain Work Passes, Employer Sponsorships, and direct Permanent Residence pathways",
     country: "Canada",
-    mainImage: "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&w=800&q=85",
-    sideImage1: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5c?auto=format&fit=crop&w=800&q=85",
-    sideImage2: "https://images.unsplash.com/photo-1519074002996-a69e7ac46a42?auto=format&fit=crop&w=800&q=85",
+    mainImage: "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&w=1200&q=85",
+    sideImage1: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=85",
+    sideImage2: "https://images.unsplash.com/photo-1519074002996-a69e7ac46a42?auto=format&fit=crop&w=1200&q=85",
     avgProcessingTime: "4 to 12 Weeks (depending on streams)",
     visaValidity: "1 to 3 Years (Employer-specific AEWV or Open Work Permit)",
     prPathway: "Massive CRS points addition in Express Entry, PNP Nomination portals, and CEC paths",
@@ -982,9 +987,9 @@ export const SEO_WORK_VISAS: SEOWorkVisaDetail[] = [
     name: "Australia PR Pathways",
     tagline: "Your Scientific Guide to Points Test, subclass 189, subclass 190, and Regional settlement",
     country: "Australia",
-    mainImage: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=800&q=85",
-    sideImage1: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=85",
-    sideImage2: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=85",
+    mainImage: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1200&q=85",
+    sideImage1: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=85",
+    sideImage2: "https://images.unsplash.com/photo-1514395462725-fb4566210144?auto=format&fit=crop&w=1200&q=85",
     avgProcessingTime: "6 to 12 Months",
     visaValidity: "5 Years (Indefinite stay, fully renewable)",
     prPathway: "Provides fully independent, direct Permanent Residency with access to Medicare, school systems & citizenship",
@@ -1063,9 +1068,9 @@ export const SEO_WORK_VISAS: SEOWorkVisaDetail[] = [
     name: "Australia Skilled Visa 462 / Work and Holiday",
     tagline: "Embark on Working Holiday adventures, seasonal farm inputs, and pathways to standard work codes",
     country: "Australia",
-    mainImage: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=800&q=85",
-    sideImage1: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=85",
-    sideImage2: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=85",
+    mainImage: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1200&q=85",
+    sideImage1: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=85",
+    sideImage2: "https://images.unsplash.com/photo-1514395462725-fb4566210144?auto=format&fit=crop&w=1200&q=85",
     avgProcessingTime: "14 to 28 Days",
     visaValidity: "1 Year (Renewable up to 3 years through specified regional work)",
     prPathway: "Provides pathways to transition to subclass 482 (Employer Sponsored) or GSM PR streams",
