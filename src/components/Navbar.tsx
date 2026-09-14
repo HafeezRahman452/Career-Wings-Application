@@ -167,6 +167,15 @@ export default function Navbar({
             <span className="h-3.5 w-px bg-white/30"></span>
 
             <a 
+              href="#edu" 
+              onClick={(e) => { e.preventDefault(); handleNavClick("career-wings-edu"); }}
+              className={`hover:underline flex items-center gap-1.5 transition-all font-black px-2 py-0.5 rounded-md ${currentTab === "career-wings-edu" ? "text-amber-300 bg-white/20 shadow-xs" : "text-amber-200 hover:text-white bg-white/10"}`}
+            >
+              <GraduationCap className="h-3.5 w-3.5 text-amber-300" /> Career Wings Edu
+            </a>
+            <span className="h-3.5 w-px bg-white/30"></span>
+
+            <a 
               href="#drive" 
               onClick={(e) => { e.preventDefault(); handleNavClick("drive"); }}
               className={`hover:underline flex items-center gap-1 transition-all font-extrabold ${currentTab === "drive" ? "text-amber-300 font-black animate-pulse" : "text-white/95 hover:text-white"}`}
@@ -284,7 +293,25 @@ export default function Navbar({
             <ChevronDown className={`h-4.5 w-4.5 text-gray-400 transition-transform ${activeMegaMenu === "tests" ? "rotate-180 text-blue-500" : ""}`} />
           </button>
 
-          {/* Item 4b: Working Visa Dropdown */}
+          {/* Item 4b: Career Wings Edu */}
+          <button
+            onMouseEnter={() => setActiveMegaMenu("edu")}
+            onClick={() => handleNavClick("career-wings-edu")}
+            className={`flex items-center gap-1.5 py-1.5 transition-all outline-none focus:outline-none cursor-pointer group ${
+              activeMegaMenu === "edu" || currentTab === "career-wings-edu" ? "text-[#0047AB] dark:text-blue-400 font-black" : "hover:text-[#0047AB] dark:hover:text-blue-400"
+            }`}
+          >
+            <span className="relative flex items-center gap-1">
+              <GraduationCap className="h-4 w-4 text-[#0047AB] dark:text-blue-400" />
+              <span>Career Wings Edu</span>
+              <span className="bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[8px] font-black px-1.5 py-0.2 rounded-full uppercase tracking-wider ml-0.5 shadow-2xs">
+                EDU
+              </span>
+            </span>
+            <ChevronDown className={`h-4.5 w-4.5 text-gray-400 transition-transform ${activeMegaMenu === "edu" ? "rotate-180 text-blue-500" : ""}`} />
+          </button>
+
+          {/* Item 4c: Working Visa Dropdown */}
           <button
             onMouseEnter={() => setActiveMegaMenu("workvisas")}
             onClick={() => handleNavClick("work-visa")}
@@ -760,6 +787,109 @@ export default function Navbar({
                 </div>
               )}
 
+              {/* CONTENT CASE 6: CAREER WINGS EDU DIRECTORY */}
+              {activeMegaMenu === "edu" && (
+                <div className="grid grid-cols-12 gap-8">
+                  {/* Left Column: Core Educational Tracks */}
+                  <div className="col-span-8 pr-6 border-r border-gray-100 dark:border-slate-800">
+                    <div className="flex items-center justify-between mb-4">
+                      <h4 className="text-xs font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest">
+                        Career Wings Edu Programs &amp; Academies
+                      </h4>
+                      <button
+                        onClick={() => handleNavClick("career-wings-edu")}
+                        className="text-xs font-black text-[#0047AB] dark:text-blue-400 hover:underline flex items-center gap-1"
+                      >
+                        View Full Edu Portal →
+                      </button>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4">
+                      {[
+                        { 
+                          title: "Academic Degree Pathways", 
+                          badge: "Global Universities", 
+                          desc: "Bachelor's, Master's & Doctoral programs with direct credit transfer.",
+                          tag: "Degrees"
+                        },
+                        { 
+                          title: "Test Prep & Language Academy", 
+                          badge: "IELTS / PTE / TOEFL", 
+                          desc: "Guaranteed high-band coaching with live simulated mock software.",
+                          tag: "High Band"
+                        },
+                        { 
+                          title: "Professional Diplomas & STEM", 
+                          badge: "Career Ready", 
+                          desc: "Vocational & industry-certified courses aligned with post-study work rights.",
+                          tag: "Industry"
+                        },
+                        { 
+                          title: "Merit Scholarships & Grants", 
+                          badge: "Financial Aid", 
+                          desc: "Free profile audit for up to 100% university tuition fee waivers.",
+                          tag: "Scholarships"
+                        }
+                      ].map((item, idx) => (
+                        <div 
+                          key={idx}
+                          onClick={() => handleNavClick("career-wings-edu")}
+                          className="p-4 bg-slate-50/50 hover:bg-slate-50 dark:bg-slate-900/30 dark:hover:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl cursor-pointer transition-all group hover:scale-[1.01] hover:border-blue-200 flex flex-col justify-between"
+                        >
+                          <div className="space-y-1">
+                            <div className="flex items-center justify-between">
+                              <span className="text-[10px] font-black uppercase text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950 px-2 py-0.5 rounded-md">
+                                {item.tag}
+                              </span>
+                              <span className="text-[10px] text-gray-400 font-bold">{item.badge}</span>
+                            </div>
+                            <h5 className="font-extrabold text-sm text-gray-900 dark:text-white group-hover:text-[#0047AB] dark:group-hover:text-blue-400 transition-colors pt-1">
+                              {item.title}
+                            </h5>
+                            <p className="text-[11px] text-gray-500 dark:text-slate-400 font-semibold leading-relaxed">
+                              {item.desc}
+                            </p>
+                          </div>
+                          <span className="text-2xs font-bold text-[#0047AB] dark:text-blue-400 pt-2 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                            Open Details →
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Right Column: Fast Edu Action Box */}
+                  <div className="col-span-4 bg-gradient-to-br from-blue-50/60 to-indigo-50/40 dark:from-slate-900 dark:to-slate-950 p-6 rounded-3xl border border-blue-500/15 flex flex-col justify-between">
+                    <div className="space-y-3">
+                      <div className="bg-[#0047AB] text-white p-2.5 rounded-2xl w-fit shadow-md">
+                        <GraduationCap className="h-6 w-6" />
+                      </div>
+                      <h4 className="font-black text-gray-900 dark:text-white text-sm sm:text-base">
+                        Career Wings Edu Admissions Desk
+                      </h4>
+                      <p className="text-xs text-gray-600 dark:text-slate-350 leading-relaxed font-semibold">
+                        Aapka apna custom educational content yahan live display hoga. New courses, test schedules ya study resources dekhne ke liye click karein.
+                      </p>
+                    </div>
+                    <div className="space-y-2 pt-4">
+                      <button
+                        onClick={() => handleNavClick("career-wings-edu")}
+                        className="w-full bg-[#0047AB] hover:bg-blue-700 text-white font-extrabold py-3 rounded-xl text-xs flex justify-center items-center gap-1.5 cursor-pointer shadow-md"
+                      >
+                        <GraduationCap className="h-4 w-4" />
+                        <span>Open Career Wings Edu Page</span>
+                      </button>
+                      <button
+                        onClick={openCounsellingModal}
+                        className="w-full bg-white dark:bg-slate-800 hover:bg-gray-50 text-[#0047AB] dark:text-blue-400 font-bold py-2 rounded-xl text-xs flex justify-center items-center border border-blue-200 dark:border-slate-700 cursor-pointer"
+                      >
+                        Book Edu Consultation
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+
             </div>
           </motion.div>
         )}
@@ -972,6 +1102,22 @@ export default function Navbar({
               </div>
             )}
           </div>
+
+          {/* Menu Item: Career Wings Edu */}
+          <button 
+            onClick={() => handleNavClick("career-wings-edu")}
+            className={`w-full text-left py-2.5 text-sm font-black border-b border-gray-100 dark:border-slate-800 flex items-center justify-between transition-all ${
+              currentTab === "career-wings-edu" ? "text-[#0047AB] dark:text-blue-400 font-extrabold" : "text-gray-700 dark:text-slate-200"
+            }`}
+          >
+            <div className="flex items-center gap-2">
+              <GraduationCap className="h-4 w-4 text-[#0047AB] dark:text-blue-400" />
+              <span>Career Wings Edu</span>
+            </div>
+            <span className="bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase shadow-2xs">
+              ACADEMY
+            </span>
+          </button>
 
           {/* Menu Item 4b Accordion: Working Visa */}
           <div className="border-b border-gray-100 dark:border-slate-800 pb-2">

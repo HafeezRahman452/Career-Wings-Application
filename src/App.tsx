@@ -62,6 +62,7 @@ import Breadcrumbs from "./components/Breadcrumbs";
 import UniversityDetailPage from "./components/UniversityDetailPage";
 import GuidedTour from "./components/GuidedTour";
 import GoogleDriveVault from "./components/GoogleDriveVault";
+import CareerWingsEduPage from "./components/CareerWingsEduPage";
 
 export default function App() {
   const [currentTabInternal, setCurrentTabInternal] = useState<string>("home");
@@ -946,6 +947,19 @@ export default function App() {
               />
             )}
 
+            {currentTab === "career-wings-edu" && (
+              <CareerWingsEduPage 
+                onBack={() => {
+                  setCurrentTab("home");
+                  window.scrollTo(0, 0);
+                }}
+                onBookCounselling={(details) => {
+                  setPrefilledDetails(details);
+                  setIsCounsellingModalOpen(true);
+                }}
+              />
+            )}
+
             {["prep-ielts", "prep-pte", "prep-toefl", "prep-duolingo"].includes(currentTab) && (
               <PrepExamSeoPage 
                 examType={currentTab.replace("prep-", "") as "ielts" | "pte" | "toefl" | "duolingo"}
@@ -1176,6 +1190,7 @@ export default function App() {
           <div className="space-y-4">
             <h5 className="font-extrabold text-sm tracking-wider text-[#0047AB] dark:text-blue-400 uppercase">Student Hub &amp; Tools</h5>
             <ul className="space-y-2 text-xs text-gray-400 font-semibold">
+              <li><button onClick={() => { setCurrentTab("career-wings-edu"); window.scrollTo(0, 0); }} className="hover:underline text-amber-300 hover:text-white font-extrabold text-left block">🎓 Career Wings Edu</button></li>
               <li><button onClick={() => { setCurrentTab("info_student_news"); window.scrollTo(0, 0); }} className="hover:underline hover:text-[#0047AB] text-emerald-400 text-left font-black block">Student News Hub</button></li>
               <li><button onClick={() => { setCurrentTab("info_free_appointment"); window.scrollTo(0, 0); }} className="hover:underline hover:text-[#0047AB] text-orange-400 font-extrabold text-left block">Free Appointment Slot</button></li>
               <li><button onClick={() => { setCurrentTab("search"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white text-left block">Find Courses &amp; Subjects</button></li>

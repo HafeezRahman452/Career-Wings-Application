@@ -169,6 +169,7 @@ export default function Breadcrumbs({
     // Other simple single level pages
     const labelMap: Record<string, string> = {
       about: "About Us",
+      "career-wings-edu": "Career Wings Edu",
       blog: "Blog & Resources",
       search: "Course Search",
       calculator: "Cost & Living Calculator",
