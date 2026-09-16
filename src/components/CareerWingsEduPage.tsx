@@ -100,40 +100,56 @@ export default function CareerWingsEduPage({ onBack, onBookCounselling }: Career
             </div>
           </div>
 
-          {/* Quick Highlight Box */}
-          <div className="w-full lg:w-[460px] bg-white dark:bg-slate-900 border border-blue-100 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl relative">
-            <div className="absolute -top-3.5 right-6 bg-gradient-to-r from-blue-700 to-indigo-700 text-white text-[11px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow">
-              Corporate Model
-            </div>
-            
-            <div className="flex items-center gap-3 mb-4">
-              <div className="p-3 bg-blue-50 dark:bg-blue-950/60 rounded-2xl border border-blue-100 dark:border-blue-900/50">
-                <ShieldCheck className="h-6 w-6 text-[#0047AB]" />
+          {/* Quick Highlight Box with SEO Image */}
+          <div className="w-full lg:w-[460px] bg-white dark:bg-slate-900 border border-blue-100 dark:border-slate-800 rounded-3xl overflow-hidden shadow-xl relative">
+            <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+              <img
+                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=900"
+                alt="Career Wings Edu Consultants - Global University Study Abroad Admissions and Student Visa Consultancy"
+                className="w-full h-full object-cover"
+                loading="eager"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex items-end p-4">
+                <span className="text-white text-xs font-bold font-mono tracking-wide drop-shadow-md">
+                  CWC Group • International Study &amp; Career Architecture
+                </span>
               </div>
-              <div>
-                <h3 className="text-base font-black text-gray-900 dark:text-white">
-                  One Parent Company
-                </h3>
-                <span className="text-xs font-bold text-gray-500 dark:text-slate-400">Two Education Brands. Multiple International Services.</span>
+              <div className="absolute top-3 right-3 bg-gradient-to-r from-blue-700 to-indigo-700 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
+                Corporate Model
               </div>
             </div>
-            
-            <p className="text-xs text-gray-650 dark:text-slate-400 mb-5 leading-relaxed font-medium">
-              CWC Consulting Services India Private Limited also extends its services into education funding, financial assistance, international work permits, and overseas career opportunities, creating a broader platform for individuals planning their future abroad.
-            </p>
 
-            <div className="space-y-3 pt-3 border-t border-gray-100 dark:border-slate-800 text-xs">
-              <div className="flex items-start gap-2.5 font-bold text-gray-800 dark:text-slate-200">
-                <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
-                <span>CWC Consulting Services India Pvt Ltd (Parent Company)</span>
+            <div className="p-6 sm:p-7 space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="p-2.5 bg-blue-50 dark:bg-blue-950/60 rounded-2xl border border-blue-100 dark:border-blue-900/50">
+                  <ShieldCheck className="h-5 w-5 text-[#0047AB]" />
+                </div>
+                <div>
+                  <h3 className="text-base font-black text-gray-900 dark:text-white">
+                    One Parent Company
+                  </h3>
+                  <span className="text-xs font-bold text-gray-500 dark:text-slate-400">Two Education Brands. Multiple International Services.</span>
+                </div>
               </div>
-              <div className="flex items-start gap-2.5 font-bold text-gray-800 dark:text-slate-200">
-                <CheckCircle2 className="h-4 w-4 text-blue-600 shrink-0 mt-0.5" />
-                <span>Career Wings Consultants (Sister Concern - Study Abroad &amp; Visas)</span>
-              </div>
-              <div className="flex items-start gap-2.5 font-bold text-gray-800 dark:text-slate-200">
-                <CheckCircle2 className="h-4 w-4 text-indigo-600 shrink-0 mt-0.5" />
-                <span>Career Wings Edu Consultants (Sister Concern - Study Abroad &amp; Visas)</span>
+              
+              <p className="text-xs text-gray-650 dark:text-slate-400 leading-relaxed font-medium">
+                CWC Consulting Services India Private Limited also extends its services into education funding, financial assistance, international work permits, and overseas career opportunities, creating a broader platform for individuals planning their future abroad.
+              </p>
+
+              <div className="space-y-2.5 pt-3 border-t border-gray-100 dark:border-slate-800 text-xs">
+                <div className="flex items-start gap-2 font-bold text-gray-800 dark:text-slate-200">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                  <span>CWC Consulting Services India Pvt Ltd (Parent Company)</span>
+                </div>
+                <div className="flex items-start gap-2 font-bold text-gray-800 dark:text-slate-200">
+                  <CheckCircle2 className="h-4 w-4 text-blue-600 shrink-0 mt-0.5" />
+                  <span>Career Wings Consultants (Sister Concern - Study Abroad &amp; Visas)</span>
+                </div>
+                <div className="flex items-start gap-2 font-bold text-gray-800 dark:text-slate-200">
+                  <CheckCircle2 className="h-4 w-4 text-indigo-600 shrink-0 mt-0.5" />
+                  <span>Career Wings Edu Consultants (Sister Concern - Study Abroad &amp; Visas)</span>
+                </div>
               </div>
             </div>
           </div>
@@ -186,101 +202,133 @@ export default function CareerWingsEduPage({ onBack, onBookCounselling }: Career
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             
             {/* Sister Concern 1: Career Wings Consultants */}
-            <div className="bg-white dark:bg-slate-900 border border-blue-150 dark:border-slate-800 rounded-3xl p-7 shadow-md hover:shadow-lg transition-all space-y-5">
-              <div className="flex items-center justify-between">
-                <span className="bg-blue-50 text-[#0047AB] dark:bg-blue-950/80 dark:text-blue-300 text-xs font-black px-3 py-1 rounded-full uppercase">
-                  Sister Concern
-                </span>
-                <Building2 className="h-5 w-5 text-[#0047AB]" />
+            <div className="bg-white dark:bg-slate-900 border border-blue-150 dark:border-slate-800 rounded-3xl overflow-hidden shadow-md hover:shadow-lg transition-all space-y-5">
+              <div className="relative h-44 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+                <img
+                  src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=800"
+                  alt="Career Wings Consultants - Overseas Education, Global University Admissions, and Campus Counselling"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent flex items-end p-4">
+                  <span className="text-white text-xs font-bold drop-shadow">
+                    International Admissions &amp; University Shortlisting
+                  </span>
+                </div>
               </div>
-              <div>
-                <h4 className="text-xl font-black text-slate-950 dark:text-white">
-                  Career Wings Consultants
-                </h4>
-                <p className="text-xs text-gray-500 dark:text-slate-400 font-semibold mt-1">
-                  Focuses primarily on international education &amp; student admissions.
-                </p>
-              </div>
+              <div className="p-7 pt-2 space-y-5">
+                <div className="flex items-center justify-between">
+                  <span className="bg-blue-50 text-[#0047AB] dark:bg-blue-950/80 dark:text-blue-300 text-xs font-black px-3 py-1 rounded-full uppercase">
+                    Sister Concern
+                  </span>
+                  <Building2 className="h-5 w-5 text-[#0047AB]" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-black text-slate-950 dark:text-white">
+                    Career Wings Consultants
+                  </h4>
+                  <p className="text-xs text-gray-500 dark:text-slate-400 font-semibold mt-1">
+                    Focuses primarily on international education &amp; student admissions.
+                  </p>
+                </div>
 
-              <div className="space-y-2.5 pt-2">
-                <p className="text-xs font-bold text-gray-700 dark:text-slate-300 uppercase tracking-wider">
-                  Key Service Wings:
-                </p>
-                {[
-                  "Study Abroad counselling",
-                  "University and course selection",
-                  "Student admissions",
-                  "Student visa assistance",
-                  "Application and documentation support",
-                  "Pre-departure guidance",
-                  "International education opportunities"
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2.5 text-xs text-gray-700 dark:text-slate-300 font-medium">
-                    <CheckCircle2 className="h-4 w-4 text-blue-600 shrink-0" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
+                <div className="space-y-2.5 pt-2">
+                  <p className="text-xs font-bold text-gray-700 dark:text-slate-300 uppercase tracking-wider">
+                    Key Service Wings:
+                  </p>
+                  {[
+                    "Study Abroad counselling",
+                    "University and course selection",
+                    "Student admissions",
+                    "Student visa assistance",
+                    "Application and documentation support",
+                    "Pre-departure guidance",
+                    "International education opportunities"
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-2.5 text-xs text-gray-700 dark:text-slate-300 font-medium">
+                      <CheckCircle2 className="h-4 w-4 text-blue-600 shrink-0" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
 
-              <div className="pt-4 border-t border-gray-100 dark:border-slate-800">
-                <button
-                  onClick={() => onBookCounselling("Career Wings Consultants: University Admissions & Study Abroad")}
-                  className="w-full bg-[#0047AB]/10 hover:bg-[#0047AB] text-[#0047AB] hover:text-white font-extrabold py-2.5 rounded-xl text-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
-                >
-                  <span>Connect with Career Wings Consultants</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </button>
+                <div className="pt-4 border-t border-gray-100 dark:border-slate-800">
+                  <button
+                    onClick={() => onBookCounselling("Career Wings Consultants: University Admissions & Study Abroad")}
+                    className="w-full bg-[#0047AB]/10 hover:bg-[#0047AB] text-[#0047AB] hover:text-white font-extrabold py-2.5 rounded-xl text-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                  >
+                    <span>Connect with Career Wings Consultants</span>
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </button>
+                </div>
               </div>
             </div>
 
             {/* Sister Concern 2: Career Wings Edu Consultants */}
-            <div className="bg-white dark:bg-slate-900 border-2 border-indigo-200 dark:border-indigo-900/60 rounded-3xl p-7 shadow-md hover:shadow-lg transition-all space-y-5 relative">
-              <div className="absolute -top-3 right-6 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[10px] font-black px-3 py-0.5 rounded-full uppercase tracking-wider">
+            <div className="bg-white dark:bg-slate-900 border-2 border-indigo-200 dark:border-indigo-900/60 rounded-3xl overflow-hidden shadow-md hover:shadow-lg transition-all space-y-5 relative">
+              <div className="absolute top-3 right-3 z-10 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow">
                 Edu Division
               </div>
-              <div className="flex items-center justify-between">
-                <span className="bg-indigo-50 text-indigo-700 dark:bg-indigo-950/80 dark:text-indigo-300 text-xs font-black px-3 py-1 rounded-full uppercase">
-                  Sister Concern
-                </span>
-                <GraduationCap className="h-5 w-5 text-indigo-600" />
+              <div className="relative h-44 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+                <img
+                  src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800"
+                  alt="Career Wings Edu Consultants - Student Visa Guidance, Overseas University Documentation & Pre-departure"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent flex items-end p-4">
+                  <span className="text-white text-xs font-bold drop-shadow">
+                    Student Visa Advisory &amp; Documentation Coordination
+                  </span>
+                </div>
               </div>
-              <div>
-                <h4 className="text-xl font-black text-slate-950 dark:text-white">
-                  Career Wings Edu Consultants
-                </h4>
-                <p className="text-xs text-gray-500 dark:text-slate-400 font-semibold mt-1">
-                  Focuses primarily on international education and student visa services.
-                </p>
-              </div>
+              <div className="p-7 pt-2 space-y-5">
+                <div className="flex items-center justify-between">
+                  <span className="bg-indigo-50 text-indigo-700 dark:bg-indigo-950/80 dark:text-indigo-300 text-xs font-black px-3 py-1 rounded-full uppercase">
+                    Sister Concern
+                  </span>
+                  <GraduationCap className="h-5 w-5 text-indigo-600" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-black text-slate-950 dark:text-white">
+                    Career Wings Edu Consultants
+                  </h4>
+                  <p className="text-xs text-gray-500 dark:text-slate-400 font-semibold mt-1">
+                    Focuses primarily on international education and student visa services.
+                  </p>
+                </div>
 
-              <div className="space-y-2.5 pt-2">
-                <p className="text-xs font-bold text-indigo-900 dark:text-indigo-300 uppercase tracking-wider">
-                  Support Across:
-                </p>
-                {[
-                  "Overseas education counselling",
-                  "University applications",
-                  "Course selection",
-                  "Student visa guidance",
-                  "Documentation assistance",
-                  "Admission process coordination",
-                  "Pre-departure support"
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2.5 text-xs text-gray-700 dark:text-slate-300 font-medium">
-                    <CheckCircle2 className="h-4 w-4 text-indigo-600 shrink-0" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
+                <div className="space-y-2.5 pt-2">
+                  <p className="text-xs font-bold text-indigo-900 dark:text-indigo-300 uppercase tracking-wider">
+                    Support Across:
+                  </p>
+                  {[
+                    "Overseas education counselling",
+                    "University applications",
+                    "Course selection",
+                    "Student visa guidance",
+                    "Documentation assistance",
+                    "Admission process coordination",
+                    "Pre-departure support"
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-2.5 text-xs text-gray-700 dark:text-slate-300 font-medium">
+                      <CheckCircle2 className="h-4 w-4 text-indigo-600 shrink-0" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
 
-              <div className="pt-4 border-t border-gray-100 dark:border-slate-800">
-                <button
-                  onClick={() => onBookCounselling("Career Wings Edu Consultants: Overseas Education & Visa Guidance")}
-                  className="w-full bg-gradient-to-r from-[#0047AB] to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-extrabold py-2.5 rounded-xl text-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
-                >
-                  <span>Connect with Career Wings Edu Consultants</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </button>
+                <div className="pt-4 border-t border-gray-100 dark:border-slate-800">
+                  <button
+                    onClick={() => onBookCounselling("Career Wings Edu Consultants: Visa Guidance & University Applications")}
+                    className="w-full bg-gradient-to-r from-[#0047AB] to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-extrabold py-2.5 rounded-xl text-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
+                  >
+                    <span>Connect with Career Wings Edu Consultants</span>
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -307,138 +355,195 @@ export default function CareerWingsEduPage({ onBack, onBookCounselling }: Career
           <div className="space-y-8">
             
             {/* Area 1: Study Abroad Services */}
-            <div className="bg-[#FCFAF7] dark:bg-slate-950 p-6 sm:p-8 rounded-3xl border border-gray-200 dark:border-slate-800 shadow-xs space-y-5">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-3 bg-blue-100 dark:bg-blue-950 text-[#0047AB] dark:text-blue-300 rounded-2xl">
-                    <BookOpen className="h-6 w-6" />
+            <div className="bg-[#FCFAF7] dark:bg-slate-950 rounded-3xl border border-gray-200 dark:border-slate-800 shadow-xs overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-12">
+                <div className="lg:col-span-8 p-6 sm:p-8 space-y-5">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div className="flex items-center gap-3">
+                      <div className="p-3 bg-blue-100 dark:bg-blue-950 text-[#0047AB] dark:text-blue-300 rounded-2xl">
+                        <BookOpen className="h-6 w-6" />
+                      </div>
+                      <div>
+                        <span className="text-xs font-bold text-[#0047AB] dark:text-blue-400 uppercase tracking-wider">Business Wing 1</span>
+                        <h3 className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white">
+                          1. Study Abroad Services
+                        </h3>
+                      </div>
+                    </div>
+                    <span className="text-xs font-bold bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full w-fit">
+                      Career Wings Consultants &amp; Career Wings Edu Consultants
+                    </span>
                   </div>
-                  <div>
-                    <span className="text-xs font-bold text-[#0047AB] dark:text-blue-400 uppercase tracking-wider">Business Wing 1</span>
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white">
-                      1. Study Abroad Services
-                    </h3>
+
+                  <p className="text-xs sm:text-sm text-gray-700 dark:text-slate-300 leading-relaxed font-medium">
+                    Through Career Wings Consultants and Career Wings Edu Consultants, we assist students who wish to pursue higher education in international destinations. Our objective is to provide students with a structured process from initial counselling through admission and visa preparation.
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 pt-2">
+                    {[
+                      "Initial student counselling",
+                      "Academic profile assessment",
+                      "Course and university selection",
+                      "Country selection guidance",
+                      "Application preparation",
+                      "University application coordination",
+                      "Offer letter assistance",
+                      "Documentation support",
+                      "Student visa guidance",
+                      "Financial documentation guidance",
+                      "Pre-departure assistance"
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-xs text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 p-2.5 rounded-xl border border-gray-150 dark:border-slate-800 font-medium">
+                        <CheckCircle2 className="h-3.5 w-3.5 text-[#0047AB] shrink-0" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
-                <span className="text-xs font-bold bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full w-fit">
-                  Career Wings Consultants &amp; Career Wings Edu Consultants
-                </span>
-              </div>
 
-              <p className="text-xs sm:text-sm text-gray-700 dark:text-slate-300 leading-relaxed font-medium">
-                Through Career Wings Consultants and Career Wings Edu Consultants, we assist students who wish to pursue higher education in international destinations. Our objective is to provide students with a structured process from initial counselling through admission and visa preparation.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 pt-2">
-                {[
-                  "Initial student counselling",
-                  "Academic profile assessment",
-                  "Course and university selection",
-                  "Country selection guidance",
-                  "Application preparation",
-                  "University application coordination",
-                  "Offer letter assistance",
-                  "Documentation support",
-                  "Student visa guidance",
-                  "Financial documentation guidance",
-                  "Pre-departure assistance"
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-xs text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 p-2.5 rounded-xl border border-gray-150 dark:border-slate-800 font-medium">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-[#0047AB] shrink-0" />
-                    <span>{item}</span>
+                <div className="lg:col-span-4 relative min-h-[220px] lg:min-h-full bg-slate-100 dark:bg-slate-850">
+                  <img
+                    src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800"
+                    alt="Study Abroad Higher Education Classrooms, Lectures, and Degree Pathways"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-5">
+                    <p className="text-white text-xs font-semibold drop-shadow">
+                      Direct admissions for Bachelor's, Master's &amp; STEM specializations across USA, UK, Canada, Australia &amp; Europe.
+                    </p>
                   </div>
-                ))}
+                </div>
               </div>
             </div>
 
             {/* Area 2: Student Visa Services */}
-            <div className="bg-[#FCFAF7] dark:bg-slate-950 p-6 sm:p-8 rounded-3xl border border-gray-200 dark:border-slate-800 shadow-xs space-y-5">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-3 bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 rounded-2xl">
-                    <Plane className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">Business Wing 2</span>
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white">
-                      2. Student Visa Services
-                    </h3>
+            <div className="bg-[#FCFAF7] dark:bg-slate-950 rounded-3xl border border-gray-200 dark:border-slate-800 shadow-xs overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-12">
+                <div className="lg:col-span-4 order-2 lg:order-1 relative min-h-[220px] lg:min-h-full bg-slate-100 dark:bg-slate-850">
+                  <img
+                    src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=800"
+                    alt="International Travel, Passports, and Student Visa Documentation"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-5">
+                    <p className="text-white text-xs font-semibold drop-shadow">
+                      Meticulous visa documentation, mock interview clearance, and embassy biometric scheduling.
+                    </p>
                   </div>
                 </div>
-                <span className="text-xs font-bold bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 px-3 py-1 rounded-full w-fit">
-                  Compliance &amp; Procedural Support
-                </span>
-              </div>
 
-              <p className="text-xs sm:text-sm text-gray-700 dark:text-slate-300 leading-relaxed font-medium">
-                Our education brands support students with the documentation and procedural requirements associated with student visa applications. Depending on the destination and individual circumstances, our services may include:
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 pt-2">
-                {[
-                  "Student visa documentation checklist",
-                  "Application preparation support",
-                  "Financial documentation guidance",
-                  "Statement & supporting document coordination",
-                  "Visa application process guidance",
-                  "Interview preparation where applicable",
-                  "Biometrics guidance",
-                  "Pre-departure assistance"
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-xs text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 p-2.5 rounded-xl border border-gray-150 dark:border-slate-800 font-medium">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
-                    <span>{item}</span>
+                <div className="lg:col-span-8 order-1 lg:order-2 p-6 sm:p-8 space-y-5">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div className="flex items-center gap-3">
+                      <div className="p-3 bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 rounded-2xl">
+                        <Plane className="h-6 w-6" />
+                      </div>
+                      <div>
+                        <span className="text-xs font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">Business Wing 2</span>
+                        <h3 className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white">
+                          2. Student Visa Services
+                        </h3>
+                      </div>
+                    </div>
+                    <span className="text-xs font-bold bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 px-3 py-1 rounded-full w-fit">
+                      Compliance &amp; Procedural Support
+                    </span>
                   </div>
-                ))}
-              </div>
 
-              <div className="p-3.5 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-800 text-[11px] text-amber-900 dark:text-amber-200 font-semibold">
-                * Note: Visa decisions remain subject to the applicable immigration authorities and their assessment of each application.
+                  <p className="text-xs sm:text-sm text-gray-700 dark:text-slate-300 leading-relaxed font-medium">
+                    Our education brands support students with the documentation and procedural requirements associated with student visa applications. Depending on the destination and individual circumstances, our services may include:
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 pt-2">
+                    {[
+                      "Student visa documentation checklist",
+                      "Application preparation support",
+                      "Financial documentation guidance",
+                      "Statement & supporting document coordination",
+                      "Visa application process guidance",
+                      "Interview preparation where applicable",
+                      "Biometrics guidance",
+                      "Pre-departure assistance"
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-xs text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 p-2.5 rounded-xl border border-gray-150 dark:border-slate-800 font-medium">
+                        <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="p-3.5 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-800 text-[11px] text-amber-900 dark:text-amber-200 font-semibold">
+                    * Note: Visa decisions remain subject to the applicable immigration authorities and their assessment of each application.
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Area 3: Education Funding Assistance */}
-            <div className="bg-[#FCFAF7] dark:bg-slate-950 p-6 sm:p-8 rounded-3xl border border-gray-200 dark:border-slate-800 shadow-xs space-y-5">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-3 bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 rounded-2xl">
-                    <DollarSign className="h-6 w-6" />
+            <div className="bg-[#FCFAF7] dark:bg-slate-950 rounded-3xl border border-gray-200 dark:border-slate-800 shadow-xs overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-12">
+                <div className="lg:col-span-8 p-6 sm:p-8 space-y-5">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div className="flex items-center gap-3">
+                      <div className="p-3 bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 rounded-2xl">
+                        <DollarSign className="h-6 w-6" />
+                      </div>
+                      <div>
+                        <span className="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider">Business Wing 3</span>
+                        <h3 className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white">
+                          3. Education Funding Assistance
+                        </h3>
+                      </div>
+                    </div>
+                    <span className="text-xs font-bold bg-amber-50 dark:bg-amber-950 text-amber-800 dark:text-amber-300 px-3 py-1 rounded-full w-fit">
+                      CWC Consulting Services India Pvt Ltd
+                    </span>
                   </div>
-                  <div>
-                    <span className="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider">Business Wing 3</span>
-                    <h3 className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white">
-                      3. Education Funding Assistance
-                    </h3>
+
+                  <p className="text-xs sm:text-sm text-gray-700 dark:text-slate-300 leading-relaxed font-medium">
+                    CWC Consulting Services India Private Limited also works in the area of education funding and financial assistance for students planning overseas education. We assist eligible students in understanding available funding options and coordinating the required financial documentation.
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 pt-2">
+                    {[
+                      "Education loan guidance",
+                      "Funding requirement assessment",
+                      "Financial documentation support",
+                      "Loan application coordination",
+                      "Co-applicant and sponsor documentation guidance",
+                      "Financial planning for overseas education",
+                      "Coordination with relevant financial service providers"
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-xs text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 p-2.5 rounded-xl border border-gray-150 dark:border-slate-800 font-medium">
+                        <CheckCircle2 className="h-3.5 w-3.5 text-amber-600 shrink-0" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="p-3.5 bg-slate-100 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 text-[11px] text-gray-650 dark:text-slate-400 font-semibold">
+                    * Note: Funding approval depends on the eligibility criteria and assessment of the respective financial institution or funding provider.
                   </div>
                 </div>
-                <span className="text-xs font-bold bg-amber-50 dark:bg-amber-950 text-amber-800 dark:text-amber-300 px-3 py-1 rounded-full w-fit">
-                  CWC Consulting Services India Pvt Ltd
-                </span>
-              </div>
 
-              <p className="text-xs sm:text-sm text-gray-700 dark:text-slate-300 leading-relaxed font-medium">
-                CWC Consulting Services India Private Limited also works in the area of education funding and financial assistance for students planning overseas education. We assist eligible students in understanding available funding options and coordinating the required financial documentation.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 pt-2">
-                {[
-                  "Education loan guidance",
-                  "Funding requirement assessment",
-                  "Financial documentation support",
-                  "Loan application coordination",
-                  "Co-applicant and sponsor documentation guidance",
-                  "Financial planning for overseas education",
-                  "Coordination with relevant financial service providers"
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-xs text-gray-700 dark:text-slate-300 bg-white dark:bg-slate-900 p-2.5 rounded-xl border border-gray-150 dark:border-slate-800 font-medium">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-amber-600 shrink-0" />
-                    <span>{item}</span>
+                <div className="lg:col-span-4 relative min-h-[220px] lg:min-h-full bg-slate-100 dark:bg-slate-850">
+                  <img
+                    src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800"
+                    alt="Study Abroad Education Loan and Financial Documentation Assistance by CWC Consulting Services"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-5">
+                    <p className="text-white text-xs font-semibold drop-shadow">
+                      Transparent education loan evaluation, sponsor affidavits, and sanctioned letter documentation.
+                    </p>
                   </div>
-                ))}
-              </div>
-
-              <div className="p-3.5 bg-slate-100 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 text-[11px] text-gray-650 dark:text-slate-400 font-semibold">
-                * Note: Funding approval depends on the eligibility criteria and assessment of the respective financial institution or funding provider.
+                </div>
               </div>
             </div>
 
@@ -446,83 +551,117 @@ export default function CareerWingsEduPage({ onBack, onBookCounselling }: Career
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               
               {/* Area 4: Work Permits */}
-              <div className="bg-[#FCFAF7] dark:bg-slate-950 p-6 sm:p-7 rounded-3xl border border-gray-200 dark:border-slate-800 space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 rounded-xl">
-                    <Briefcase className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">Business Wing 4</span>
-                    <h4 className="text-lg font-black text-gray-900 dark:text-white">
-                      4. International Work Permit Services
-                    </h4>
+              <div className="bg-[#FCFAF7] dark:bg-slate-950 rounded-3xl border border-gray-200 dark:border-slate-800 overflow-hidden shadow-xs space-y-4">
+                <div className="relative h-44 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+                  <img
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800"
+                    alt="International Corporate Work Permits and Skilled Employment Visas by CWC Group"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent flex items-end p-4">
+                    <span className="text-white text-xs font-bold drop-shadow">
+                      Global Corporate Placement &amp; Employment Authorization
+                    </span>
                   </div>
                 </div>
 
-                <p className="text-xs text-gray-650 dark:text-slate-400 leading-relaxed font-medium">
-                  CWC Consulting Services India Private Limited also provides support for individuals exploring international employment and work permit opportunities.
-                </p>
-
-                <div className="space-y-2 pt-1">
-                  {[
-                    "Overseas employment opportunity guidance",
-                    "Country and job category information",
-                    "Employer or opportunity coordination",
-                    "Work permit process guidance",
-                    "Documentation assistance",
-                    "Application coordination",
-                    "Pre-departure guidance"
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-xs text-gray-700 dark:text-slate-300 font-medium">
-                      <CheckCircle2 className="h-3.5 w-3.5 text-indigo-600 shrink-0" />
-                      <span>{item}</span>
+                <div className="p-6 sm:p-7 pt-2 space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 rounded-xl">
+                      <Briefcase className="h-5 w-5" />
                     </div>
-                  ))}
-                </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">Business Wing 4</span>
+                      <h4 className="text-lg font-black text-gray-900 dark:text-white">
+                        4. International Work Permit Services
+                      </h4>
+                    </div>
+                  </div>
 
-                <p className="text-[10px] text-gray-500 pt-2 italic">
-                  * Work permit eligibility, employment approval, and immigration decisions depend on applicable laws and destination government authorities.
-                </p>
+                  <p className="text-xs text-gray-650 dark:text-slate-400 leading-relaxed font-medium">
+                    CWC Consulting Services India Private Limited also provides support for individuals exploring international employment and work permit opportunities.
+                  </p>
+
+                  <div className="space-y-2 pt-1">
+                    {[
+                      "Overseas employment opportunity guidance",
+                      "Country and job category information",
+                      "Employer or opportunity coordination",
+                      "Work permit process guidance",
+                      "Documentation assistance",
+                      "Application coordination",
+                      "Pre-departure guidance"
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-xs text-gray-700 dark:text-slate-300 font-medium">
+                        <CheckCircle2 className="h-3.5 w-3.5 text-indigo-600 shrink-0" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <p className="text-[10px] text-gray-500 pt-2 italic">
+                    * Work permit eligibility, employment approval, and immigration decisions depend on applicable laws and destination government authorities.
+                  </p>
+                </div>
               </div>
 
               {/* Area 5: International Careers */}
-              <div className="bg-[#FCFAF7] dark:bg-slate-950 p-6 sm:p-7 rounded-3xl border border-gray-200 dark:border-slate-800 space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 rounded-xl">
-                    <Globe className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">Business Wing 5</span>
-                    <h4 className="text-lg font-black text-gray-900 dark:text-white">
-                      5. International Career Opportunities
-                    </h4>
+              <div className="bg-[#FCFAF7] dark:bg-slate-950 rounded-3xl border border-gray-200 dark:border-slate-800 overflow-hidden shadow-xs space-y-4">
+                <div className="relative h-44 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+                  <img
+                    src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800"
+                    alt="International Career Pathways for Students and Working Professionals by Career Wings"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent flex items-end p-4">
+                    <span className="text-white text-xs font-bold drop-shadow">
+                      International Careers for Students &amp; Experienced Talents
+                    </span>
                   </div>
                 </div>
 
-                <p className="text-xs text-gray-650 dark:text-slate-400 leading-relaxed font-medium">
-                  Our broader objective is to support individuals at different stages of their international career journey:
-                </p>
-
-                <div className="space-y-3 pt-2">
-                  <div className="p-3 bg-white dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800">
-                    <h5 className="text-xs font-bold text-blue-700 dark:text-blue-400">For Students:</h5>
-                    <p className="text-xs text-gray-600 dark:text-slate-400 mt-0.5">
-                      This may begin with overseas education, global university enrollment, and post-study opportunities.
-                    </p>
+                <div className="p-6 sm:p-7 pt-2 space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 rounded-xl">
+                      <Globe className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">Business Wing 5</span>
+                      <h4 className="text-lg font-black text-gray-900 dark:text-white">
+                        5. International Career Opportunities
+                      </h4>
+                    </div>
                   </div>
 
-                  <div className="p-3 bg-white dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800">
-                    <h5 className="text-xs font-bold text-indigo-700 dark:text-indigo-400">For Professionals:</h5>
-                    <p className="text-xs text-gray-600 dark:text-slate-400 mt-0.5">
-                      It may involve international employment, skilled visas, and legal work permit opportunities.
-                    </p>
-                  </div>
+                  <p className="text-xs text-gray-650 dark:text-slate-400 leading-relaxed font-medium">
+                    Our broader objective is to support individuals at different stages of their international career journey:
+                  </p>
 
-                  <div className="p-3 bg-white dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800">
-                    <h5 className="text-xs font-bold text-amber-700 dark:text-amber-400">Financial &amp; Funding Support:</h5>
-                    <p className="text-xs text-gray-600 dark:text-slate-400 mt-0.5">
-                      For eligible applicants, financial assistance can help address financial requirements associated with overseas education.
-                    </p>
+                  <div className="space-y-3 pt-2">
+                    <div className="p-3 bg-white dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800">
+                      <h5 className="text-xs font-bold text-blue-700 dark:text-blue-400">For Students:</h5>
+                      <p className="text-xs text-gray-600 dark:text-slate-400 mt-0.5">
+                        This may begin with overseas education, global university enrollment, and post-study opportunities.
+                      </p>
+                    </div>
+
+                    <div className="p-3 bg-white dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800">
+                      <h5 className="text-xs font-bold text-indigo-700 dark:text-indigo-400">For Professionals:</h5>
+                      <p className="text-xs text-gray-600 dark:text-slate-400 mt-0.5">
+                        It may involve international employment, skilled visas, and legal work permit opportunities.
+                      </p>
+                    </div>
+
+                    <div className="p-3 bg-white dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800">
+                      <h5 className="text-xs font-bold text-amber-700 dark:text-amber-400">Financial &amp; Funding Support:</h5>
+                      <p className="text-xs text-gray-600 dark:text-slate-400 mt-0.5">
+                        For eligible applicants, financial assistance can help address financial requirements associated with overseas education.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
