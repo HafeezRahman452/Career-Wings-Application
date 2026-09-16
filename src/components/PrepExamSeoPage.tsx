@@ -557,7 +557,7 @@ export default function PrepExamSeoPage({
                     type="tel"
                     name="phone"
                     required
-                    placeholder="e.g. +91 90001 19072"
+                    placeholder="e.g. +91 90521 41168"
                     value={formData.phone}
                     onChange={handleFormChange}
                     className="w-full bg-slate-950/80 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 font-medium font-bold"

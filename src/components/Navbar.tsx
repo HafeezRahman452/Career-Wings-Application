@@ -25,6 +25,7 @@ import {
   Home,
   MessageCircle,
   Building,
+  Building2,
   CheckCircle,
   Users,
   Database,
@@ -123,7 +124,7 @@ export default function Navbar({
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              Support: <a href="tel:+919000119072" className="underline text-white hover:text-amber-200 font-black">+91 90001 19072</a>
+              Support: <a href="tel:+919052141168" className="underline text-white hover:text-amber-200 font-black">+91 90521 41168</a>
             </span>
             
             {/* Quick seat booking trigger link on top right for mobile/tablets */}
@@ -790,45 +791,45 @@ export default function Navbar({
               {/* CONTENT CASE 6: CAREER WINGS EDU DIRECTORY */}
               {activeMegaMenu === "edu" && (
                 <div className="grid grid-cols-12 gap-8">
-                  {/* Left Column: Core Educational Tracks */}
+                  {/* Left Column: Core Educational Tracks & Sister Concerns */}
                   <div className="col-span-8 pr-6 border-r border-gray-100 dark:border-slate-800">
                     <div className="flex items-center justify-between mb-4">
                       <h4 className="text-xs font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest">
-                        Career Wings Edu Programs &amp; Academies
+                        CWC Group • Sister Concerns &amp; Services
                       </h4>
                       <button
                         onClick={() => handleNavClick("career-wings-edu")}
                         className="text-xs font-black text-[#0047AB] dark:text-blue-400 hover:underline flex items-center gap-1"
                       >
-                        View Full Edu Portal →
+                        View Full Edu Group Portal →
                       </button>
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
                       {[
                         { 
-                          title: "Academic Degree Pathways", 
-                          badge: "Global Universities", 
-                          desc: "Bachelor's, Master's & Doctoral programs with direct credit transfer.",
-                          tag: "Degrees"
+                          title: "Career Wings Edu Consultants", 
+                          badge: "Sister Concern", 
+                          desc: "Overseas education counselling, university applications, documentation & admissions.",
+                          tag: "Study Abroad"
                         },
                         { 
-                          title: "Test Prep & Language Academy", 
-                          badge: "IELTS / PTE / TOEFL", 
-                          desc: "Guaranteed high-band coaching with live simulated mock software.",
-                          tag: "High Band"
+                          title: "Student Visa Services", 
+                          badge: "Visa Processing", 
+                          desc: "Visa documentation checklist, interview prep, biometrics & pre-departure support.",
+                          tag: "Visa Assistance"
                         },
                         { 
-                          title: "Professional Diplomas & STEM", 
-                          badge: "Career Ready", 
-                          desc: "Vocational & industry-certified courses aligned with post-study work rights.",
-                          tag: "Industry"
+                          title: "Education Funding Assistance", 
+                          badge: "CWC Parent Co.", 
+                          desc: "Education loan guidance, financial assessment, planning & loan application coordination.",
+                          tag: "Funding"
                         },
                         { 
-                          title: "Merit Scholarships & Grants", 
-                          badge: "Financial Aid", 
-                          desc: "Free profile audit for up to 100% university tuition fee waivers.",
-                          tag: "Scholarships"
+                          title: "International Work Permits", 
+                          badge: "Global Careers", 
+                          desc: "Overseas employment opportunities, job categories, employer coordination & work permits.",
+                          tag: "Work Permits"
                         }
                       ].map((item, idx) => (
                         <div 
@@ -851,7 +852,7 @@ export default function Navbar({
                             </p>
                           </div>
                           <span className="text-2xs font-bold text-[#0047AB] dark:text-blue-400 pt-2 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                            Open Details →
+                            Explore Details →
                           </span>
                         </div>
                       ))}
@@ -862,13 +863,16 @@ export default function Navbar({
                   <div className="col-span-4 bg-gradient-to-br from-blue-50/60 to-indigo-50/40 dark:from-slate-900 dark:to-slate-950 p-6 rounded-3xl border border-blue-500/15 flex flex-col justify-between">
                     <div className="space-y-3">
                       <div className="bg-[#0047AB] text-white p-2.5 rounded-2xl w-fit shadow-md">
-                        <GraduationCap className="h-6 w-6" />
+                        <Building2 className="h-6 w-6" />
                       </div>
-                      <h4 className="font-black text-gray-900 dark:text-white text-sm sm:text-base">
-                        Career Wings Edu Admissions Desk
+                      <span className="text-[10px] font-black uppercase tracking-wider text-[#0047AB] dark:text-blue-400 block">
+                        Parent Company Entity
+                      </span>
+                      <h4 className="font-black text-gray-900 dark:text-white text-sm sm:text-base leading-snug">
+                        CWC Consulting Services India Private Limited
                       </h4>
                       <p className="text-xs text-gray-600 dark:text-slate-350 leading-relaxed font-semibold">
-                        Aapka apna custom educational content yahan live display hoga. New courses, test schedules ya study resources dekhne ke liye click karein.
+                        Building Pathways for Global Education, Funding and International Careers through our specialized brands.
                       </p>
                     </div>
                     <div className="space-y-2 pt-4">
@@ -877,13 +881,13 @@ export default function Navbar({
                         className="w-full bg-[#0047AB] hover:bg-blue-700 text-white font-extrabold py-3 rounded-xl text-xs flex justify-center items-center gap-1.5 cursor-pointer shadow-md"
                       >
                         <GraduationCap className="h-4 w-4" />
-                        <span>Open Career Wings Edu Page</span>
+                        <span>Open Career Wings Edu</span>
                       </button>
                       <button
                         onClick={openCounsellingModal}
                         className="w-full bg-white dark:bg-slate-800 hover:bg-gray-50 text-[#0047AB] dark:text-blue-400 font-bold py-2 rounded-xl text-xs flex justify-center items-center border border-blue-200 dark:border-slate-700 cursor-pointer"
                       >
-                        Book Edu Consultation
+                        Book Free Consultation
                       </button>
                     </div>
                   </div>

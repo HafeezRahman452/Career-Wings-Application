@@ -445,10 +445,10 @@ export default function WorkVisaDetailPage({
                 Ready to take your global career to the next level? Dial our direct advisory Desk.
               </p>
               <a 
-                href="tel:+919000119072"
+                href="tel:+919052141168"
                 className="block text-[#0047AB] font-extrabold text-sm hover:underline"
               >
-                +91 90001 19072
+                +91 90521 41168
               </a>
             </div>
 

@@ -2127,7 +2127,7 @@ export default function DestinationDetailPage({
               </div>
 
               <p className="text-[10px] text-slate-400 text-center font-semibold">
-                Or Call direct support hotline at: <a href="tel:+919000119072" className="underline text-white hover:text-amber-400 transition-colors">+91 90050 11972</a>
+                Or Call direct support hotline at: <a href="tel:+919052141168" className="underline text-white hover:text-amber-400 transition-colors">+91 90521 41168</a>
               </p>
             </div>
 
@@ -2140,10 +2140,10 @@ export default function DestinationDetailPage({
                 Our advisors are standing by. Get pre-eligibility support regarding tuition fees structures, accommodation waivers, and visas.
               </p>
               <a 
-                href="tel:+91900119072"
+                href="tel:+919052141168"
                 className="block text-[#0047AB] dark:text-blue-400 font-extrabold text-base hover:underline transition-all"
               >
-                +91 90001 19072
+                +91 90521 41168
               </a>
             </div>
 

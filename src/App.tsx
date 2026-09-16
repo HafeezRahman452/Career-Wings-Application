@@ -1202,7 +1202,7 @@ export default function App() {
           <div className="space-y-4">
             <h5 className="font-extrabold text-sm tracking-wider text-[#0047AB] dark:text-blue-400 uppercase">Contact Headquarters</h5>
             <div className="space-y-2 text-xs text-gray-400 font-bold leading-relaxed">
-              <p className="flex items-center gap-2"><Phone className="h-4 w-4 text-emerald-400 shrink-0" /> <a href="tel:+919000119072" className="hover:underline select-all text-white">+91 90001 19072</a></p>
+              <p className="flex items-center gap-2"><Phone className="h-4 w-4 text-emerald-400 shrink-0" /> <a href="tel:+919052141168" className="hover:underline select-all text-white">+91 90521 41168</a></p>
               <p className="flex items-start gap-2 pt-1"><MapPin className="h-4.5 w-4.5 text-blue-400 shrink-0" /><span className="text-gray-300">Metro Pillar No: 1568, 509, 5th Floor, Chaithyana Chambers, Chaitanyapuri, Dilsukhnagar, Hyderabad-60, Telangana, India.</span></p>
               <p className="flex items-center gap-2 pt-1"><Mail className="h-4 w-4 text-orange-400 shrink-0" /> info@careerwingsconsultants.com</p>
               <p className="flex items-center gap-2"><Globe className="h-4 w-4 text-teal-400 shrink-0" /> www.careerwingsconsultants.com</p>

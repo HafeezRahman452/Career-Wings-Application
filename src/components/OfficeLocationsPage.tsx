@@ -185,7 +185,7 @@ export default function OfficeLocationsPage({ onBack, onBookCounselling }: Offic
                   <Phone className="h-5.5 w-5.5 text-emerald-700 shrink-0" />
                   <div>
                     <span className="text-xs text-black dark:text-slate-100 font-black uppercase tracking-wider block">Kuch Sawaal Hai? Direct Call Karein:</span>
-                    <a href="tel:+919000119072" className="text-[#002288] dark:text-blue-300 hover:underline text-xl font-black">+91 90001 19072</a>
+                    <a href="tel:+919052141168" className="text-[#002288] dark:text-blue-300 hover:underline text-xl font-black">+91 90521 41168</a>
                   </div>
                 </div>
                 <div className="flex items-center gap-3.5 pt-4">
@@ -271,7 +271,7 @@ export default function OfficeLocationsPage({ onBack, onBookCounselling }: Offic
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
-                          placeholder="Jaise: +91 90001 19072"
+                          placeholder="Jaise: +91 90521 41168"
                           className={`w-full bg-slate-50 dark:bg-slate-950/40 border ${errors.phone ? 'border-red-500' : 'border-slate-300 dark:border-slate-700'} text-slate-900 dark:text-white rounded-xl py-3 pl-10 pr-4 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-[#0047AB] focus:bg-white`}
                         />
                       </div>
