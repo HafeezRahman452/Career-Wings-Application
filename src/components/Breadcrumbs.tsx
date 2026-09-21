@@ -183,10 +183,21 @@ export default function Breadcrumbs({
       info_uk_psw: "United Kingdom PSW Route",
       info_usa_stem: "United States STEM OPT Rules",
       info_scholarships: "Specialized Scholarship Funding Guide",
-      info_sop_guide: "Expert SOP drafting manual"
+      info_sop_guide: "Expert SOP drafting manual",
+      "404": "Page Not Found"
     };
 
-    const label = labelMap[currentTab] || currentTab.replace("info_", "").replace(/_/g, " ").replace("-", " ");
+    const isNotFound = ![
+      "home", "search", "calculator", "eligibility", "destinations", 
+      "services", "tests", "destination-detail", "university-finder", 
+      "university-detail", "work-visa-detail", "news", "about", 
+      "blog", "post-resume", "community", "locations", "drive", 
+      "career-wings-edu", "prep-ielts", "prep-pte", "prep-toefl", "prep-duolingo"
+    ].includes(currentTab) && !currentTab.startsWith("info_");
+
+    const label = isNotFound 
+      ? "Page Not Found (404)" 
+      : (labelMap[currentTab] || currentTab.replace("info_", "").replace(/_/g, " ").replace("-", " "));
     breadcrumbItems.push({
       label: label.charAt(0).toUpperCase() + label.slice(1),
       isCurrent: true

@@ -63,6 +63,7 @@ import UniversityDetailPage from "./components/UniversityDetailPage";
 import GuidedTour from "./components/GuidedTour";
 import GoogleDriveVault from "./components/GoogleDriveVault";
 import CareerWingsEduPage from "./components/CareerWingsEduPage";
+import NotFoundPage from "./components/NotFoundPage";
 
 export default function App() {
   const [currentTabInternal, setCurrentTabInternal] = useState<string>("home");
@@ -122,6 +123,23 @@ export default function App() {
     setDarkMode(false);
     document.documentElement.classList.remove("dark");
     localStorage.setItem("cwc-theme", "light");
+
+    // Check if user landed on an unknown hash or path in URL
+    const hash = window.location.hash.replace("#", "").trim();
+    if (hash) {
+      const knownTabs = [
+        "home", "search", "calculator", "eligibility", "destinations", 
+        "services", "tests", "university-finder", "news", "about", 
+        "blog", "post-resume", "community", "locations", "drive", "career-wings-edu",
+        "prep-ielts", "prep-pte", "prep-toefl", "prep-duolingo"
+      ];
+      if (knownTabs.includes(hash) || hash.startsWith("info_")) {
+        setCurrentTab(hash);
+      } else if (hash && !["discover-form", "services-block", "home-view"].includes(hash)) {
+        // Unknown hash - route to 404
+        setCurrentTab(hash);
+      }
+    }
   }, []);
 
   // Open the interactive guided tour immediately on every page load / refresh
@@ -993,6 +1011,57 @@ export default function App() {
                 setCurrentTab={setCurrentTab}
               />
             )}
+
+            {/* 404 Not Found Fallback */}
+            {![
+              "home",
+              "search",
+              "calculator",
+              "eligibility",
+              "destinations",
+              "services",
+              "tests",
+              "destination-detail",
+              "university-finder",
+              "university-detail",
+              "work-visa-detail",
+              "news",
+              "about",
+              "blog",
+              "post-resume",
+              "community",
+              "locations",
+              "drive",
+              "career-wings-edu",
+              "prep-ielts",
+              "prep-pte",
+              "prep-toefl",
+              "prep-duolingo"
+            ].includes(currentTab) && !currentTab.startsWith("info_") && (
+              <NotFoundPage 
+                onNavigateHome={() => {
+                  setCurrentTab("home");
+                  window.scrollTo(0, 0);
+                }}
+                onNavigateSearch={() => {
+                  setCurrentTab("search");
+                  window.scrollTo(0, 0);
+                }}
+                onNavigateDestinations={() => {
+                  setCurrentTab("destinations");
+                  window.scrollTo(0, 0);
+                }}
+                onNavigateEdu={() => {
+                  setCurrentTab("career-wings-edu");
+                  window.scrollTo(0, 0);
+                }}
+                onBookCounselling={(details) => {
+                  setPrefilledDetails(details || "Inquiry from 404 page");
+                  setIsCounsellingModalOpen(true);
+                }}
+                currentAttemptedPath={currentTab !== "404" ? currentTab : undefined}
+              />
+            )}
           </motion.div>
         </AnimatePresence>
       </main>
@@ -1225,6 +1294,8 @@ export default function App() {
                 <button onClick={() => { setCurrentTab("info_terms_of_use"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white cursor-pointer bg-transparent border-0 p-0">Terms of Use</button>
                 <span>|</span>
                 <button onClick={() => { setCurrentTab("info_disclaimer"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white cursor-pointer bg-transparent border-0 p-0">Disclaimer</button>
+                <span>|</span>
+                <button onClick={() => { setCurrentTab("404"); window.scrollTo(0, 0); }} className="hover:underline hover:text-amber-400 text-gray-500 cursor-pointer bg-transparent border-0 p-0">404 Directory</button>
               </div>
 
               <div className="italic font-serif text-base text-gray-400">
