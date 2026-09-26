@@ -3,6 +3,7 @@
   "appId": "1:191409741010:web:7c15a52e1e3a14aa37a10b",
   "apiKey": "AIzaSyB2QpBmRWxUDgrN0JUCFz2kZL4hKCfKcGg",
   "authDomain": "teak-tomorrow-tw1xt.firebaseapp.com",
+  "firestoreDatabaseId": "ai-studio-careerwings-d911e98c-044d-4b3b-acd7-8f55a71e744f",
   "storageBucket": "teak-tomorrow-tw1xt.firebasestorage.app",
   "messagingSenderId": "191409741010",
   "measurementId": "",

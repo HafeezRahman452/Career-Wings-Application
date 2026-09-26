@@ -975,6 +975,10 @@ export default function App() {
                   setPrefilledDetails(details);
                   setIsCounsellingModalOpen(true);
                 }}
+                onNavigateTab={(tabId) => {
+                  setCurrentTab(tabId);
+                  window.scrollTo(0, 0);
+                }}
               />
             )}
 
@@ -1199,17 +1203,17 @@ export default function App() {
         <div className="border-b border-white/5 py-12">
           <div className="container mx-auto px-4 max-w-7xl flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="space-y-2">
-              <h4 className="text-xl font-bold tracking-tight">Need Personal physical counseling?</h4>
-              <p className="text-xs text-gray-400 font-semibold max-w-md">Our counselors are situated strategically across global major metros including Chicago, London, Sydney, Dublin, and Toronto.</p>
+              <h4 className="text-xl sm:text-2xl font-bold tracking-tight">Need Personal physical counseling?</h4>
+              <p className="text-sm text-gray-300 dark:text-gray-400 font-semibold max-w-md">Our counselors are situated strategically across global major metros including Chicago, London, Sydney, Dublin, and Toronto.</p>
             </div>
             <button 
               onClick={() => {
                 setCurrentTab("locations");
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="inline-flex items-center gap-2 bg-[#0047AB] hover:bg-blue-600 text-white px-6 py-3 rounded-full font-bold text-xs shadow-md transition-all cursor-pointer shrink-0"
+              className="inline-flex items-center gap-2 bg-[#0047AB] hover:bg-blue-600 text-white px-6 py-3.5 rounded-full font-bold text-sm shadow-md transition-all cursor-pointer shrink-0"
             >
-              <MapPin className="h-4 w-4" /> Our Office Locations
+              <MapPin className="h-4.5 w-4.5" /> Our Office Locations
             </button>
           </div>
         </div>
@@ -1217,8 +1221,8 @@ export default function App() {
         {/* Directory Columns */}
         <div className="container mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 max-w-[1440px]">
           <div className="space-y-4">
-            <h5 className="font-extrabold text-sm tracking-wider text-[#0047AB] dark:text-blue-400 uppercase">Study Destinations</h5>
-            <ul className="space-y-2 text-xs text-gray-400 font-semibold">
+            <h5 className="font-extrabold text-base tracking-wider text-sky-400 uppercase">Study Destinations</h5>
+            <ul className="space-y-2.5 text-sm text-gray-300 dark:text-gray-400 font-semibold">
               <li><button onClick={() => { setSelectedDestination(DESTINATIONS[0]); setCurrentTab("destination-detail"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white text-left">Study in Australia</button></li>
               <li><button onClick={() => { setSelectedDestination(DESTINATIONS[1]); setCurrentTab("destination-detail"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white text-left">Study in United Kingdom</button></li>
               <li><button onClick={() => { setSelectedDestination(DESTINATIONS[2]); setCurrentTab("destination-detail"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white text-left">Study in United States</button></li>
@@ -1230,12 +1234,13 @@ export default function App() {
               <li><button onClick={() => { setSelectedDestination(DESTINATIONS[6]); setCurrentTab("destination-detail"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white text-left">Study in Europe 🇪🇺</button></li>
               <li><button onClick={() => { setCurrentTab("info_why_study_abroad"); window.scrollTo(0,0); }} className="text-orange-400 hover:underline hover:text-white font-extrabold text-left block">Why Study Abroad?</button></li>
               <li><button onClick={() => { setCurrentTab("info_where_what"); window.scrollTo(0,0); }} className="text-orange-400 hover:underline hover:text-white font-extrabold text-left block">Where &amp; What?</button></li>
+              <li><button onClick={() => { setCurrentTab("404"); window.scrollTo(0,0); }} className="text-orange-400 hover:underline hover:text-white font-extrabold text-left block">404 Directory</button></li>
             </ul>
           </div>
 
           <div className="space-y-4">
-            <h5 className="font-extrabold text-sm tracking-wider text-[#0047AB] dark:text-blue-400 uppercase">Guidance &amp; Milestones</h5>
-            <ul className="space-y-2 text-xs text-gray-400 font-semibold">
+            <h5 className="font-extrabold text-base tracking-wider text-sky-400 uppercase">Guidance &amp; Milestones</h5>
+            <ul className="space-y-2.5 text-sm text-gray-300 dark:text-gray-400 font-semibold">
               <li><button onClick={() => { setCurrentTab("info_personalized_profile_assessment"); window.scrollTo(0,0); }} className="hover:underline hover:text-white text-left">Personalized Profile Assessment</button></li>
               <li><button onClick={() => { setCurrentTab("info_applying_to_institutions"); window.scrollTo(0,0); }} className="hover:underline hover:text-white text-left">Applying to Institutions</button></li>
               <li><button onClick={() => { setCurrentTab("info_admission_letter_acceptance"); window.scrollTo(0,0); }} className="hover:underline hover:text-white text-left">Admission Letter Acceptance</button></li>
@@ -1246,22 +1251,22 @@ export default function App() {
           </div>
 
           <div className="space-y-4">
-            <h5 className="font-extrabold text-sm tracking-wider text-[#0047AB] dark:text-blue-400 uppercase">Roadmap Timeline</h5>
-            <ul className="space-y-2 text-xs text-gray-400 font-semibold">
+            <h5 className="font-extrabold text-base tracking-wider text-sky-400 uppercase">Roadmap Timeline</h5>
+            <ul className="space-y-2.5 text-sm text-gray-300 dark:text-gray-400 font-semibold">
               <li><button onClick={() => { setCurrentTab("info_how_apply"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white text-left block">How Do I Apply?</button></li>
               <li><button onClick={() => { setCurrentTab("info_receiving_offers"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white text-left block">Receiving Offers</button></li>
               <li><button onClick={() => { setCurrentTab("info_prepare_depart"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white text-left block">Prepare Depart</button></li>
               <li><button onClick={() => { setCurrentTab("info_arrive_thrive"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white text-left block">Arrive &amp; Thrive</button></li>
-              <li><button onClick={() => { setCurrentTab("tests"); window.scrollTo(0, 0); }} className="hover:underline hover:text-[#0047AB] font-bold text-left block">Language Testing Centers</button></li>
+              <li><button onClick={() => { setCurrentTab("tests"); window.scrollTo(0, 0); }} className="hover:underline hover:text-sky-400 font-bold text-left block">Language Testing Centers</button></li>
             </ul>
           </div>
 
           <div className="space-y-4">
-            <h5 className="font-extrabold text-sm tracking-wider text-[#0047AB] dark:text-blue-400 uppercase">Student Hub &amp; Tools</h5>
-            <ul className="space-y-2 text-xs text-gray-400 font-semibold">
+            <h5 className="font-extrabold text-base tracking-wider text-sky-400 uppercase">Student Hub &amp; Tools</h5>
+            <ul className="space-y-2.5 text-sm text-gray-300 dark:text-gray-400 font-semibold">
               <li><button onClick={() => { setCurrentTab("career-wings-edu"); window.scrollTo(0, 0); }} className="hover:underline text-amber-300 hover:text-white font-extrabold text-left block">🎓 Career Wings Edu</button></li>
-              <li><button onClick={() => { setCurrentTab("info_student_news"); window.scrollTo(0, 0); }} className="hover:underline hover:text-[#0047AB] text-emerald-400 text-left font-black block">Student News Hub</button></li>
-              <li><button onClick={() => { setCurrentTab("info_free_appointment"); window.scrollTo(0, 0); }} className="hover:underline hover:text-[#0047AB] text-orange-400 font-extrabold text-left block">Free Appointment Slot</button></li>
+              <li><button onClick={() => { setCurrentTab("news"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white text-emerald-400 text-left font-black block">📰 Student News</button></li>
+              <li><button onClick={() => { setCurrentTab("info_free_appointment"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white text-orange-400 font-extrabold text-left block">Free Appointment Slot</button></li>
               <li><button onClick={() => { setCurrentTab("search"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white text-left block">Find Courses &amp; Subjects</button></li>
               <li><button onClick={() => { setCurrentTab("calculator"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white text-left block">Cost of Living Calculator</button></li>
               <li><button onClick={() => { setCurrentTab("eligibility"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white font-extrabold text-left block">Eligibility Checker Tool</button></li>
@@ -1269,12 +1274,12 @@ export default function App() {
           </div>
 
           <div className="space-y-4">
-            <h5 className="font-extrabold text-sm tracking-wider text-[#0047AB] dark:text-blue-400 uppercase">Contact Headquarters</h5>
-            <div className="space-y-2 text-xs text-gray-400 font-bold leading-relaxed">
-              <p className="flex items-center gap-2"><Phone className="h-4 w-4 text-emerald-400 shrink-0" /> <a href="tel:+919052141168" className="hover:underline select-all text-white">+91 90521 41168</a></p>
-              <p className="flex items-start gap-2 pt-1"><MapPin className="h-4.5 w-4.5 text-blue-400 shrink-0" /><span className="text-gray-300">Metro Pillar No: 1568, 509, 5th Floor, Chaithyana Chambers, Chaitanyapuri, Dilsukhnagar, Hyderabad-60, Telangana, India.</span></p>
-              <p className="flex items-center gap-2 pt-1"><Mail className="h-4 w-4 text-orange-400 shrink-0" /> info@careerwingsconsultants.com</p>
-              <p className="flex items-center gap-2"><Globe className="h-4 w-4 text-teal-400 shrink-0" /> www.careerwingsconsultants.com</p>
+            <h5 className="font-extrabold text-base tracking-wider text-sky-400 uppercase">Contact Headquarters</h5>
+            <div className="space-y-2.5 text-sm text-gray-300 dark:text-gray-400 font-bold leading-relaxed">
+              <p className="flex items-center gap-2"><Phone className="h-4.5 w-4.5 text-emerald-400 shrink-0" /> <a href="tel:+919052141168" className="hover:underline select-all text-white">+91 90521 41168</a></p>
+              <p className="flex items-start gap-2 pt-1"><MapPin className="h-5 w-5 text-blue-400 shrink-0" /><span className="text-gray-200">Metro Pillar No: 1568, 509, 5th Floor, Chaithyana Chambers, Chaitanyapuri, Dilsukhnagar, Hyderabad-60, Telangana, India.</span></p>
+              <p className="flex items-center gap-2 pt-1"><Mail className="h-4.5 w-4.5 text-orange-400 shrink-0" /> info@careerwingsconsultants.com</p>
+              <p className="flex items-center gap-2"><Globe className="h-4.5 w-4.5 text-teal-400 shrink-0" /> www.careerwingsconsultants.com</p>
             </div>
           </div>
         </div>
@@ -1283,22 +1288,27 @@ export default function App() {
         <div className="bg-slate-950 py-12 border-t border-white/5">
           <div className="container mx-auto px-4 max-w-[1440px]">
             <div className="w-full flex flex-col lg:flex-row justify-between items-center gap-6">
-              <div className="text-xs text-gray-500 font-semibold text-center lg:text-left">
+              <div className="text-sm text-gray-400 font-semibold text-center lg:text-left">
                 <p>© 2026 Career Wings Consultants. All Rights Reserved.</p>
                 <p className="mt-1">ISO 9001:2015 Study Abroad Consultation Agency.</p>
               </div>
               
-              <div className="flex items-center gap-6 text-xs text-gray-500 font-semibold">
-                <button onClick={() => { setCurrentTab("info_privacy_policy"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white cursor-pointer bg-transparent border-0 p-0">Privacy Policy</button>
-                <span>|</span>
-                <button onClick={() => { setCurrentTab("info_terms_of_use"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white cursor-pointer bg-transparent border-0 p-0">Terms of Use</button>
-                <span>|</span>
-                <button onClick={() => { setCurrentTab("info_disclaimer"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white cursor-pointer bg-transparent border-0 p-0">Disclaimer</button>
-                <span>|</span>
-                <button onClick={() => { setCurrentTab("404"); window.scrollTo(0, 0); }} className="hover:underline hover:text-amber-400 text-gray-500 cursor-pointer bg-transparent border-0 p-0">404 Directory</button>
+              <div className="flex flex-col items-center justify-center gap-2.5 text-sm text-gray-400 font-semibold">
+                <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 text-gray-300">
+                  <button onClick={() => { setCurrentTab("about"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white cursor-pointer bg-transparent border-0 p-0 font-bold">About Us</button>
+                  <span className="text-gray-600">|</span>
+                  <button onClick={() => { setCurrentTab("news"); window.scrollTo(0, 0); }} className="hover:underline hover:text-emerald-400 text-gray-300 cursor-pointer bg-transparent border-0 p-0 font-bold">Student News</button>
+                </div>
+                <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs text-gray-400">
+                  <button onClick={() => { setCurrentTab("info_privacy_policy"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white cursor-pointer bg-transparent border-0 p-0">Privacy Policy</button>
+                  <span className="text-gray-600">|</span>
+                  <button onClick={() => { setCurrentTab("info_terms_of_use"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white cursor-pointer bg-transparent border-0 p-0">Terms of Use</button>
+                  <span className="text-gray-600">|</span>
+                  <button onClick={() => { setCurrentTab("info_disclaimer"); window.scrollTo(0, 0); }} className="hover:underline hover:text-white cursor-pointer bg-transparent border-0 p-0">Disclaimer</button>
+                </div>
               </div>
 
-              <div className="italic font-serif text-base text-gray-400">
+              <div className="italic font-serif text-lg text-gray-300">
                 Turning Aspirations into Global Opportunities!
               </div>
             </div>

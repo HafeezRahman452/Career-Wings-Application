@@ -26,10 +26,22 @@ import {
 interface CareerWingsEduPageProps {
   onBack: () => void;
   onBookCounselling: (details: string) => void;
+  onNavigateTab?: (tabId: string) => void;
 }
 
-export default function CareerWingsEduPage({ onBack, onBookCounselling }: CareerWingsEduPageProps) {
-  const [activeTab, setActiveTab] = useState<"overview" | "structure" | "services" | "process" | "philosophy">("overview");
+export default function CareerWingsEduPage({ onBack, onBookCounselling, onNavigateTab }: CareerWingsEduPageProps) {
+  const [activeTab, setActiveTab] = useState<"overview" | "structure" | "study-abroad" | "visas" | "funding" | "work-permits">("overview");
+
+  const scrollToSection = (sectionId: string) => {
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      el.classList.add("ring-4", "ring-[#0047AB]/50", "rounded-3xl", "transition-all", "duration-700");
+      setTimeout(() => {
+        el.classList.remove("ring-4", "ring-[#0047AB]/50");
+      }, 2500);
+    }
+  };
 
   return (
     <div className="bg-[#FCFAF7] dark:bg-slate-950 min-h-screen text-slate-900 dark:text-slate-100 transition-colors">
@@ -156,8 +168,63 @@ export default function CareerWingsEduPage({ onBack, onBookCounselling }: Career
         </div>
       </section>
 
+      {/* Sticky Quick-Navigation Sub-Bar */}
+      <div className="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-gray-200 dark:border-slate-800 py-3 px-4 sm:px-8 md:px-12 shadow-sm transition-all">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-0.5">
+            <span className="text-[10px] font-black uppercase text-gray-400 dark:text-slate-500 shrink-0 hidden sm:inline tracking-wider mr-1">
+              Edu Directory:
+            </span>
+            <button
+              onClick={() => scrollToSection("group-structure")}
+              className="px-3 py-1.5 rounded-lg text-xs font-black bg-slate-100 hover:bg-blue-50 hover:text-[#0047AB] dark:bg-slate-800 dark:hover:bg-blue-950/60 dark:hover:text-blue-300 text-slate-700 dark:text-slate-300 transition-all shrink-0 cursor-pointer"
+            >
+              🏛️ Group Structure
+            </button>
+            <button
+              onClick={() => scrollToSection("edu-study-abroad")}
+              className="px-3 py-1.5 rounded-lg text-xs font-black bg-blue-50 text-[#0047AB] hover:bg-blue-100 dark:bg-blue-950/60 dark:text-blue-300 dark:hover:bg-blue-900/70 transition-all shrink-0 cursor-pointer"
+            >
+              🎓 1. Study Abroad
+            </button>
+            <button
+              onClick={() => scrollToSection("edu-student-visa")}
+              className="px-3 py-1.5 rounded-lg text-xs font-black bg-emerald-50 text-emerald-700 hover:bg-emerald-100 dark:bg-emerald-950/60 dark:text-emerald-300 dark:hover:bg-emerald-900/70 transition-all shrink-0 cursor-pointer"
+            >
+              🛂 2. Student Visas
+            </button>
+            <button
+              onClick={() => scrollToSection("edu-education-funding")}
+              className="px-3 py-1.5 rounded-lg text-xs font-black bg-amber-50 text-amber-800 hover:bg-amber-100 dark:bg-amber-950/60 dark:text-amber-300 dark:hover:bg-amber-900/70 transition-all shrink-0 cursor-pointer"
+            >
+              💰 3. Education Funding
+            </button>
+            <button
+              onClick={() => scrollToSection("edu-work-permits")}
+              className="px-3 py-1.5 rounded-lg text-xs font-black bg-indigo-50 text-indigo-700 hover:bg-indigo-100 dark:bg-indigo-950/60 dark:text-indigo-300 dark:hover:bg-indigo-900/70 transition-all shrink-0 cursor-pointer"
+            >
+              💼 4. Work Permits
+            </button>
+            <button
+              onClick={() => scrollToSection("edu-processes")}
+              className="px-3 py-1.5 rounded-lg text-xs font-black bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-all shrink-0 cursor-pointer"
+            >
+              🔄 How It Works
+            </button>
+          </div>
+
+          <button
+            onClick={() => onBookCounselling("Career Wings Edu - Direct Inquiry")}
+            className="hidden md:flex items-center gap-1.5 bg-[#0047AB] hover:bg-blue-700 text-white font-extrabold px-3.5 py-1.5 rounded-lg text-xs shrink-0 cursor-pointer shadow-xs"
+          >
+            <span>Talk to Advisor</span>
+            <ArrowRight className="h-3.5 w-3.5" />
+          </button>
+        </div>
+      </div>
+
       {/* Group Structure Section */}
-      <section id="group-structure" className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-8 md:px-12 space-y-12">
+      <section id="group-structure" className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-8 md:px-12 space-y-12 scroll-mt-20">
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="text-[#0047AB] dark:text-blue-400 font-black text-xs uppercase tracking-widest block">
             ORGANISATIONAL ARCHITECTURE
@@ -355,7 +422,7 @@ export default function CareerWingsEduPage({ onBack, onBookCounselling }: Career
           <div className="space-y-8">
             
             {/* Area 1: Study Abroad Services */}
-            <div className="bg-[#FCFAF7] dark:bg-slate-950 rounded-3xl border border-gray-200 dark:border-slate-800 shadow-xs overflow-hidden">
+            <div id="edu-study-abroad" className="bg-[#FCFAF7] dark:bg-slate-950 rounded-3xl border border-gray-200 dark:border-slate-800 shadow-xs overflow-hidden scroll-mt-24 transition-all">
               <div className="grid grid-cols-1 lg:grid-cols-12">
                 <div className="lg:col-span-8 p-6 sm:p-8 space-y-5">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -399,6 +466,28 @@ export default function CareerWingsEduPage({ onBack, onBookCounselling }: Career
                       </div>
                     ))}
                   </div>
+
+                  {/* Interactive Action Buttons */}
+                  <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-150 dark:border-slate-800">
+                    {onNavigateTab && (
+                      <>
+                        <button
+                          onClick={() => onNavigateTab("search")}
+                          className="bg-[#0047AB] hover:bg-blue-700 text-white font-black px-4 py-2.5 rounded-xl text-xs flex items-center gap-1.5 cursor-pointer shadow-xs transition-transform hover:scale-[1.02]"
+                        >
+                          <Compass className="h-3.5 w-3.5" />
+                          <span>Search 1,200+ Courses &amp; Universities →</span>
+                        </button>
+                        <button
+                          onClick={() => onNavigateTab("destinations")}
+                          className="bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-gray-250 dark:border-slate-700 font-bold px-4 py-2.5 rounded-xl text-xs flex items-center gap-1.5 cursor-pointer transition-all"
+                        >
+                          <Globe className="h-3.5 w-3.5 text-blue-600" />
+                          <span>Explore Study Destinations (USA, UK, Canada...)</span>
+                        </button>
+                      </>
+                    )}
+                  </div>
                 </div>
 
                 <div className="lg:col-span-4 relative min-h-[220px] lg:min-h-full bg-slate-100 dark:bg-slate-850">
@@ -419,7 +508,7 @@ export default function CareerWingsEduPage({ onBack, onBookCounselling }: Career
             </div>
 
             {/* Area 2: Student Visa Services */}
-            <div className="bg-[#FCFAF7] dark:bg-slate-950 rounded-3xl border border-gray-200 dark:border-slate-800 shadow-xs overflow-hidden">
+            <div id="edu-student-visa" className="bg-[#FCFAF7] dark:bg-slate-950 rounded-3xl border border-gray-200 dark:border-slate-800 shadow-xs overflow-hidden scroll-mt-24 transition-all">
               <div className="grid grid-cols-1 lg:grid-cols-12">
                 <div className="lg:col-span-4 order-2 lg:order-1 relative min-h-[220px] lg:min-h-full bg-slate-100 dark:bg-slate-850">
                   <img
@@ -476,6 +565,26 @@ export default function CareerWingsEduPage({ onBack, onBookCounselling }: Career
                     ))}
                   </div>
 
+                  {/* Interactive Action Button */}
+                  <div className="flex flex-wrap gap-3 pt-3 border-t border-gray-150 dark:border-slate-800">
+                    {onNavigateTab && (
+                      <button
+                        onClick={() => onNavigateTab("services")}
+                        className="bg-emerald-600 hover:bg-emerald-700 text-white font-black px-4 py-2.5 rounded-xl text-xs flex items-center gap-1.5 cursor-pointer shadow-xs transition-transform hover:scale-[1.02]"
+                      >
+                        <ShieldCheck className="h-3.5 w-3.5" />
+                        <span>Open Student Visa &amp; Documentation Portal →</span>
+                      </button>
+                    )}
+                    <button
+                      onClick={() => onBookCounselling("Student Visa Documentation & Interview Assessment")}
+                      className="bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-gray-250 dark:border-slate-700 font-bold px-4 py-2.5 rounded-xl text-xs flex items-center gap-1.5 cursor-pointer"
+                    >
+                      <PhoneCall className="h-3.5 w-3.5 text-emerald-600" />
+                      <span>Book Free Visa File Verification</span>
+                    </button>
+                  </div>
+
                   <div className="p-3.5 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-800 text-[11px] text-amber-900 dark:text-amber-200 font-semibold">
                     * Note: Visa decisions remain subject to the applicable immigration authorities and their assessment of each application.
                   </div>
@@ -484,7 +593,7 @@ export default function CareerWingsEduPage({ onBack, onBookCounselling }: Career
             </div>
 
             {/* Area 3: Education Funding Assistance */}
-            <div className="bg-[#FCFAF7] dark:bg-slate-950 rounded-3xl border border-gray-200 dark:border-slate-800 shadow-xs overflow-hidden">
+            <div id="edu-education-funding" className="bg-[#FCFAF7] dark:bg-slate-950 rounded-3xl border border-gray-200 dark:border-slate-800 shadow-xs overflow-hidden scroll-mt-24 transition-all">
               <div className="grid grid-cols-1 lg:grid-cols-12">
                 <div className="lg:col-span-8 p-6 sm:p-8 space-y-5">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -525,6 +634,26 @@ export default function CareerWingsEduPage({ onBack, onBookCounselling }: Career
                     ))}
                   </div>
 
+                  {/* Interactive Action Button */}
+                  <div className="flex flex-wrap gap-3 pt-3 border-t border-gray-150 dark:border-slate-800">
+                    {onNavigateTab && (
+                      <button
+                        onClick={() => onNavigateTab("calculator")}
+                        className="bg-amber-600 hover:bg-amber-700 text-white font-black px-4 py-2.5 rounded-xl text-xs flex items-center gap-1.5 cursor-pointer shadow-xs transition-transform hover:scale-[1.02]"
+                      >
+                        <DollarSign className="h-3.5 w-3.5" />
+                        <span>Open Cost of Living &amp; Loan Calculator →</span>
+                      </button>
+                    )}
+                    <button
+                      onClick={() => onBookCounselling("Education Funding & Loan Coordination")}
+                      className="bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-gray-250 dark:border-slate-700 font-bold px-4 py-2.5 rounded-xl text-xs flex items-center gap-1.5 cursor-pointer"
+                    >
+                      <Landmark className="h-3.5 w-3.5 text-amber-600" />
+                      <span>Request Bank Loan Pre-Check</span>
+                    </button>
+                  </div>
+
                   <div className="p-3.5 bg-slate-100 dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 text-[11px] text-gray-650 dark:text-slate-400 font-semibold">
                     * Note: Funding approval depends on the eligibility criteria and assessment of the respective financial institution or funding provider.
                   </div>
@@ -551,7 +680,7 @@ export default function CareerWingsEduPage({ onBack, onBookCounselling }: Career
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               
               {/* Area 4: Work Permits */}
-              <div className="bg-[#FCFAF7] dark:bg-slate-950 rounded-3xl border border-gray-200 dark:border-slate-800 overflow-hidden shadow-xs space-y-4">
+              <div id="edu-work-permits" className="bg-[#FCFAF7] dark:bg-slate-950 rounded-3xl border border-gray-200 dark:border-slate-800 overflow-hidden shadow-xs space-y-4 scroll-mt-24 transition-all">
                 <div className="relative h-44 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
                   <img
                     src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800"
@@ -601,14 +730,27 @@ export default function CareerWingsEduPage({ onBack, onBookCounselling }: Career
                     ))}
                   </div>
 
-                  <p className="text-[10px] text-gray-500 pt-2 italic">
+                  {/* Interactive Action Button */}
+                  <div className="pt-2 border-t border-gray-150 dark:border-slate-800">
+                    {onNavigateTab && (
+                      <button
+                        onClick={() => onNavigateTab("work-visa-detail")}
+                        className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-black py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5 cursor-pointer shadow-xs transition-transform hover:scale-[1.01]"
+                      >
+                        <Briefcase className="h-3.5 w-3.5" />
+                        <span>Explore Official Work Visas Directory →</span>
+                      </button>
+                    )}
+                  </div>
+
+                  <p className="text-[10px] text-gray-500 pt-1 italic">
                     * Work permit eligibility, employment approval, and immigration decisions depend on applicable laws and destination government authorities.
                   </p>
                 </div>
               </div>
 
               {/* Area 5: International Careers */}
-              <div className="bg-[#FCFAF7] dark:bg-slate-950 rounded-3xl border border-gray-200 dark:border-slate-800 overflow-hidden shadow-xs space-y-4">
+              <div id="edu-careers" className="bg-[#FCFAF7] dark:bg-slate-950 rounded-3xl border border-gray-200 dark:border-slate-800 overflow-hidden shadow-xs space-y-4 scroll-mt-24 transition-all">
                 <div className="relative h-44 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
                   <img
                     src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800"
@@ -673,7 +815,7 @@ export default function CareerWingsEduPage({ onBack, onBookCounselling }: Career
       </section>
 
       {/* How Our Group Works (Flow Chart) */}
-      <section className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-8 md:px-12 space-y-12">
+      <section id="edu-processes" className="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-8 md:px-12 space-y-12 scroll-mt-24">
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="text-[#0047AB] dark:text-blue-400 font-black text-xs uppercase tracking-widest block">
             STRUCTURED CLIENT JOURNEYS
